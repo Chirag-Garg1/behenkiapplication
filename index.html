@@ -30,13 +30,15 @@
 
       .card-3d {
         background-color: #f8f9fa;
-        border-radius: 50%;
+        border-radius: 50%; /* Ensures the shape is circular */
         margin: auto;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         padding: 40px 20px;
         text-align: center;
         transition: transform 0.3s ease;
         cursor: pointer;
+        width: 150px; /* Fixed width for circular shape */
+        height: 150px; /* Fixed height for circular shape */
       }
       .card-3d:hover {
         transform: translateY(-5px) scale(1.03);
