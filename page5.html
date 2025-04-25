@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Page 5</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>User Device Preferences</h1>
+  <p>The chart highlights the distribution of devices used by visitors to access our web app.</p>
+  <canvas id="doughnutChart"></canvas>
+  <script>
+    new Chart(document.getElementById("doughnutChart"), {
+      type: 'doughnut',
+      data: {
+        labels: ['Desktop', 'Mobile', 'Tablet'],
+        datasets: [{
+          label: 'Users',
+          data: [60, 30, 10],
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+        }]
+      }
+    });
+  </script>
+</body>
+</html>

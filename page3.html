@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Page 3</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Market Share Distribution</h1>
+  <p>This pie chart illustrates the market share of our top 5 competitors in the industry for Q1.</p>
+  <canvas id="pieChart"></canvas>
+  <script>
+    new Chart(document.getElementById("pieChart"), {
+      type: 'pie',
+      data: {
+        labels: ['Company A', 'Company B', 'Company C', 'Us', 'Others'],
+        datasets: [{
+          label: 'Market Share',
+          data: [25, 20, 15, 30, 10],
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF']
+        }]
+      }
+    });
+  </script>
+</body>
+</html>

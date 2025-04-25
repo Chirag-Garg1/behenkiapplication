@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Page 4</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Team Skill Comparison</h1>
+  <p>This radar chart compares team strengths across multiple skill areas including communication, coding, design, and analytics.</p>
+  <canvas id="radarChart"></canvas>
+  <script>
+    new Chart(document.getElementById("radarChart"), {
+      type: 'radar',
+      data: {
+        labels: ['Communication', 'Coding', 'Design', 'Marketing', 'Analytics'],
+        datasets: [{
+          label: 'Team A',
+          data: [8, 9, 6, 7, 5],
+          backgroundColor: 'rgba(179,181,198,0.2)',
+          borderColor: 'rgba(179,181,198,1)'
+        }]
+      }
+    });
+  </script>
+</body>
+</html>

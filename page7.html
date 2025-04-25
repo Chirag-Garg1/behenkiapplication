@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Page 7</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Project Risk Assessment</h1>
+  <p>Each bubble represents a project with its risk score (Y), impact (X), and estimated cost (radius).</p>
+  <canvas id="bubbleChart"></canvas>
+  <script>
+    new Chart(document.getElementById("bubbleChart"), {
+      type: 'bubble',
+      data: {
+        datasets: [{
+          label: 'Project Risks',
+          data: [
+            {x: 10, y: 20, r: 10},
+            {x: 15, y: 10, r: 15},
+            {x: 20, y: 30, r: 12}
+          ],
+          backgroundColor: '#FF6384'
+        }]
+      },
+      options: {
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Impact'
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: 'Risk Score'
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Page 6</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Sales by Region</h1>
+  <p>This chart displays our sales performance across five major regions in the last quarter.</p>
+  <canvas id="polarChart"></canvas>
+  <script>
+    new Chart(document.getElementById("polarChart"), {
+      type: 'polarArea',
+      data: {
+        labels: ['North America', 'Europe', 'Asia', 'South America', 'Africa'],
+        datasets: [{
+          label: 'Sales',
+          data: [200, 180, 150, 100, 70],
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF']
+        }]
+      }
+    });
+  </script>
+</body>
+</html>
