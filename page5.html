@@ -13,10 +13,9 @@
       body {
         margin: auto;
         font-family: "Montserrat", sans-serif;
-        background-image: url("./images/WHO.png");
+        background: url("./images/WHO.png") no-repeat center top, #490d99;
         background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
+        background-attachment: scroll;
         color: #333;
       }
 
@@ -120,6 +119,12 @@
 
       /* Responsive Design */
       @media (max-width: 768px) {
+        body {
+          background: url("./images/WHO.png") no-repeat center top, #490d99;
+          background-size: contain;
+          background-attachment: scroll;
+        }
+
         header {
           flex-direction: column;
           text-align: center;
