@@ -1,52 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Page 1</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-  <h1>Page 1</h1>
-  <p>This is a paragraph describing the data shown in the graph below.</p>
-  <canvas id="myChart" width="400" height="200"></canvas>
-  <script>
-    const ctx = document.getElementById('myChart').getContext('2d');
-    const myChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
-          ],
-          borderColor: [
-            'rgba(255,99,132,1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DIPLOMIND - House of Ideas</title>
+    <style>
+      /* General Styles */
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
+      }
+
+      header {
+        background-color: #2c1c75;
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      .menu-icon {
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .hero {
+        position: relative;
+        text-align: center;
+        color: white;
+      }
+
+      .hero img {
+        width: 100%;
+        height: auto;
+      }
+
+      .hero-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      .hero-text h2 {
+        font-size: 36px;
+        margin: 0;
+      }
+
+      .hero-text p {
+        margin-top: 10px;
+        font-size: 18px;
+      }
+
+      .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 30px 20px;
+        gap: 20px;
+      }
+
+      .card {
+        background-color: white;
+        border-radius: 15px;
+        padding: 20px;
+        width: 300px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .card h3 {
+        color: #2c1c75;
+        margin-bottom: 15px;
+      }
+
+      .card p,
+      .card ul {
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .card ul {
+        padding-left: 20px;
+        text-align: left;
+      }
+
+      .buttons {
+        text-align: center;
+        margin: 30px 0;
+      }
+
+      .buttons a {
+        display: inline-block;
+        margin: 10px;
+        padding: 12px 24px;
+        background-color: #2c1c75;
+        color: white;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      .buttons a:hover {
+        background-color: #44318d;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .hero-text {
+          position: static;
+          transform: none;
+          margin-top: 20px;
+        }
+
+        .hero-text h2 {
+          font-size: 28px;
+        }
+
+        .hero-text p {
+          font-size: 16px;
+        }
+
+        .card {
+          width: 90%; /* Make cards take up most of the screen width */
+        }
+
+        .buttons a {
+          width: 90%; /* Make buttons full-width */
+          padding: 10px;
         }
       }
-    });
-  </script>
-</body>
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <h1>DIPLOMIND</h1>
+      <div class="menu-icon">&#9776;</div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <img
+        src="07112b08-6c97-42d6-88e3-f07ed8f0fe88.jpg"
+        alt="Parliament Building"
+      />
+      <div class="hero-text">
+        <h2>Welcome to the House of Ideas!</h2>
+        <p>Be the voice. Be the change. Be the politician you dream of</p>
+      </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+      <div class="card">
+        <h3>What is AIPPM?</h3>
+        <p>
+          The All India Political Parties Meet (AIPPM) simulates real-world
+          Indian politics. It’s where delegates represent political parties,
+          debate policies, and propose solutions on pressing national issues.
+        </p>
+        <p>
+          <em
+            >Think debates, negotiations, and a LOT of drama — the good
+            kind!</em
+          >
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>What You Need to Be as a Delegate?</h3>
+        <ul>
+          <li>Quick thinker and confident speaker</li>
+          <li>Know your political party’s ideology</li>
+          <li>Respectful debating skills (no shouting, only shining!!)</li>
+          <li>Ability to form coalitions and alliances</li>
+        </ul>
+        <p>
+          <em
+            >In AIPPM, it’s not just about shouting the loudest — it’s about
+            thinking the smartest.</em
+          >
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Key Information You Should Know</h3>
+        <p>
+          <strong>Portfolios:</strong> Political party leaders like PM, CM, or
+          Union Ministers.
+        </p>
+        <p>
+          <strong>Rules:</strong> Formal debate mixed with informal negotiation
+          sessions.
+        </p>
+      </div>
+    </div>
+
+    <!-- Buttons Section -->
+    <div class="buttons">
+      <a href="#">See AIPPM Rules of Procedure</a>
+      <a href="#">Check Sample Research and Speeches</a>
+    </div>
+  </body>
 </html>
