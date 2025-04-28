@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diplomind - Welcome</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at 25% 30%, #d8b4fe 0%, transparent 30%),
+                  radial-gradient(circle at 70% 70%, #c084fc 0%, transparent 35%),
+                  radial-gradient(circle at 50% 50%, #6a0dad 0%, transparent 60%),
+                  #000000;
+      background-blend-mode: overlay;
+      font-family: 'Roboto', sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Decorative elements */
+    .corner-circle {
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      width: 200px;
+      height: 200px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .star {
+      position: absolute;
+      top: 20%;
+      left: 80%;
+      width: 50px;
+      height: 50px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: rgba(255, 255, 255, 0.7);
+      animation: float 4s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Diplomind Intro Content */
+    .content {
+      position: relative;
+      z-index: 3;
+      max-width: 900px;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #d8b4fe, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+
+    .content h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #d8b4fe;
+    }
+
+    .content p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .content ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      font-size: 1.1rem;
+    }
+
+    .content ul li {
+      margin: 10px 0;
+    }
+
+    .content .highlight {
+      font-weight: bold;
+      color: #c084fc;
+    }
+
+    /* Professional font */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+  </style>
+</head>
+<body>
+  <div class="corner-circle"></div>
+  <div class="star">✦</div>
+
+  <div class="content">
+    <h1>Welcome to Diplomind</h1>
+
+    <p>Your ultimate launchpad to unlock confidence, MUN skills, public speaking power, leadership energy, and a global mindset — all in a way that’s super easy, super smart, and super YOU.</p>
+
+    <hr>
+
+    <h2>What You’ll Find Here:</h2>
+    <ul>
+      <li>MUN 101: Easy breakdowns of the basics, guides, formats, and rules — no cap, you’ll get it instantly.</li>
+      <li>Scripts & Openings: Ready-to-use speeches, templates, and hacks to crush it.</li>
+      <li>Smart Research Tools: Links, portals, and methods to own any agenda.</li>
+      <li>Confidence Crash Course: Quick tricks to kill stage fear in 6-8 seconds.</li>
+      <li>Speech & Debate Skills: Rapid wins to speak like you’re born for it.</li>
+      <li>Mindset Boosters: Real talk on slaying self-doubt and anxiety.</li>
+      <li>Debate Games & Exercises: Fun ways to level up without the boring grind.</li>
+      <li>Leadership Builder: Projects, tips, and vibes to make you the natural leader you’re meant to be.</li>
+      <li>Exclusive Diplomind Resources: Passports, challenges, badges — collect, flex, and grow.</li>
+      <li>Community Vibes: Share wins, struggles, hacks, and real talk with your squad.</li>
+    </ul>
+
+    <hr>
+
+    <p class="highlight">One site. Endless glow-up.</p>
+    <p>Ready to flex your brainpower? Let’s get you Diplominded.</p>
+  </div>
+</body>
+</html>

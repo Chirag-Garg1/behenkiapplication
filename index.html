@@ -118,28 +118,29 @@
 
       /* Scrolling Text Styles */
       .scrolling-text-container {
-        width: 100%;
-        overflow: hidden;
+        width: 100%; /* Full width of the container */
+        overflow: hidden; /* Hide overflowing text */
         border-radius: 15px;
         padding: 20px 0;
         margin-bottom: 60px;
+        position: relative;
       }
-
+      
       .scrolling-text {
         display: inline-block;
         white-space: nowrap;
-        animation: scroll-left 10s linear infinite;
+        animation: scroll-infinite 10s linear infinite; /* Faster scrolling animation */
         font-size: 1.5rem;
         font-weight: bold;
         color: #ffffff;
       }
-
-      @keyframes scroll-left {
+      
+      @keyframes scroll-infinite {
         0% {
-          transform: translateX(100%);
+          transform: translateX(10%); /* Start at the initial position */
         }
         100% {
-          transform: translateX(-100%);
+          transform: translateX(-100%); /* Move fully to the left */
         }
       }
 
@@ -278,16 +279,18 @@
       </div>
     </div>
     <!-- Scrolling Text -->
-    <div
-      class="scrolling-text-container text-center py-3"
-      data-aos="fade-up"
-      style="margin-top: -50px"
-    >
-      <div class="scrolling-text">
-        Confidence • Diplomacy • Public Speaking • Research • MUN Mastery •
-        Leadership • Teamwork • Growth
-      </div>
-    </div>
+<div
+  class="scrolling-text-container text-center py-3"
+  data-aos="fade-up"
+  style="margin-top: -50px"
+>
+  <div class="scrolling-text">
+    Confidence • Diplomacy • Public Speaking • Research • MUN Mastery •
+    Leadership • Teamwork • Growth • Networking • Global Awareness •
+    Communication • Advocacy • Negotiation • Critical Thinking • Cultural Exchange •
+    Problem Solving • Empathy • Persuasion • Debate • Collaboration •
+  </div>
+</div>
 
     <!-- About Us Section -->
     <div id="about-us" class="container mb-5" data-aos="fade-up">
