@@ -26,28 +26,38 @@
     <link rel="stylesheet" href="css/styles.css" />
 
     <style>
-      /* General Body Styles */
-      body {
-        font-family: "Montserrat", sans-serif; /* Set Montserrat as the default font */
-        margin: 0;
-        padding: 0;
-        background-image: url("./images/background.jpg"); /* Add background image */
-        background-size: cover; /* Ensure the image covers the entire viewport */
-        background-position: center; /* Center the background image */
-        background-attachment: scroll; /* Fix background scrolling issue on phones */
-        color: #ffffff; /* Default text color */
-      }
-
-      body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #490d99;
-        z-index: -1;
-      }
+      
+        /* General Body Styles */
+        body {
+          font-family: "Montserrat", sans-serif; /* Set Montserrat as the default font */
+          margin: 0;
+          padding: 0;
+          background: #4c2c5c;
+          background: radial-gradient(
+            circle,
+            rgba(76, 44, 92, 1) 0%,
+            rgba(119, 0, 255, 1) 64%,
+            rgba(113, 0, 243, 1) 29%,
+            rgba(0, 0, 0, 1) 100%,
+            rgba(29, 33, 51, 1) 100%
+          ); /* Updated radial gradient */
+          background-size: cover; /* Ensure the gradient covers the entire viewport */
+          background-position: center; /* Center the background */
+          background-attachment: scroll; /* Fix background scrolling issue on phones */
+          color: #ffffff; /* Default text color */
+        }
+      
+        body::before {
+          content: "";
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: none; /* Remove the previous solid background color */
+          z-index: -1;
+        }
+      
 
       /* Navbar Styles */
       .nav-item {
@@ -245,6 +255,7 @@
           <h1 class="display-4 fw-bold">Define.</h1>
           <h1 class="display-4 fw-bold">Confide.</h1>
           <h1 class="display-4 fw-bold">Diplomind.</h1>
+          <h6>Crafting Confident Speakers Through the Language of Diplomacy</h6>
           <!-- Opaque Button -->
           <a
             href="./images/MunGuide.pdf"
@@ -284,15 +295,11 @@
           About Us
         </h2>
         <p style="color: #490d99; font-size: 1rem; line-height: 1.8">
-          At Diplomind, we believe that communication is power—and we're here to
-          help you harness it. Our mission is to turn hesitation into
-          articulation, doubts into debates, and confusion into conviction. With
-          a vibrant community of young thinkers, speakers, and leaders,
-          Diplomind offers a space where you can sharpen your skills, challenge
-          yourself, and find your voice. Whether you're prepping for your first
-          MUN or just looking to boost your public speaking game, we’ve got
-          tools, tips, and tricks tailored just for you. Let's grow together,
-          one confident conversation at a time.
+          Hey blooming diplomats!<br>
+          Welcome to Diplomind—your ultimate glow-up spot for MUN newbies. 
+          Feeling under the weather about public speaking and getting cold feet? Worry not, we've got you. From decoding MUN lingo to slaying your first committee session, we're here to help you eat (and leave no crumbs.) Our sessions are designed to tackle stage fright head-on, turning those nerves into confidene.
+          So, if you're ready to stop being mid and start serving main character energy in every debate, let's get you locked in with us, you'll not only boost your confidence but also develop leadership qualities and sharpen your research skills, setting you up for success both in and out of the committee rom.
+          Diplomind—where your MUN era begins. Period.
         </p>
       </div>
     </div>

@@ -13,17 +13,16 @@
       body {
         margin: auto;
         font-family: "Montserrat", sans-serif;
-        background-image: url("./images/UNGA.png");
+        background: url("./images/UNGA.png") no-repeat center top, #490d99;
         background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
+        background-attachment: scroll;
         color: #333;
       }
 
       header {
-        background-color: rgba(44, 28, 117, 0.9); /* Semi-transparent background */
+        background-color: #490d99; /* Match the background color with the logo */
         color: white;
-        padding: 20px;
+        padding: 0px 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -120,9 +119,10 @@
 
       /* Responsive Design */
       @media (max-width: 768px) {
-        header {
-          flex-direction: column;
-          text-align: center;
+        body {
+          background: url("./images/UNGA.png") no-repeat center top, #490d99;
+          background-size: contain;
+          background-attachment: scroll;
         }
 
         .hero-text {
@@ -151,7 +151,9 @@
   <body>
     <!-- Header Section -->
     <header>
-      <h1>UNGA</h1>
+      <a href="index.html" title="Go to Home Page">
+        <img src="images/LogBGRemoved.png" alt="DIPLOMIND Logo" style="height: 40px;" />
+      </a>
       <a
         href="index.html"
         class="menu-icon"
@@ -217,7 +219,3 @@
     </div>
   </body>
 </html>
-
-
-
-UNGA
