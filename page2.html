@@ -117,6 +117,24 @@
         background-color: #44318d;
       }
 
+      /* Image Styles */
+      .card-body img {
+        width: 100%;
+        max-width: 220px;
+        height: auto;
+        margin-top: -30px;
+        margin-bottom: 16px;
+        object-fit: contain;
+        border-radius: 1rem;
+      }
+
+      @media (min-width: 768px) {
+        .card-body img {
+          width: 280px;
+          height: 280px;
+        }
+      }
+
       /* Responsive Design */
       @media (max-width: 768px) {
         body {
