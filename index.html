@@ -254,6 +254,14 @@
       .dark-gradient-card .card-body {
         background: transparent;
       }
+
+      @media (max-width: 768px) {
+        .card-body img[src*="card1.png"],
+        .card-body img[src*="card2.png"],
+        .card-body img[src*="card3.png"] {
+          margin-top: 3px !important;
+        }
+      }
     </style>
   </head>
 
@@ -365,6 +373,7 @@
     <div class="container mb-5" data-aos="fade-up">
       <div style="width: 100%; max-width: 1000px; margin: auto">
         <div class="row g-4">
+          <!-- Card 1 -->
           <div class="col-12 col-md-4">
             <a href="card1page.html" class="text-decoration-none">
               <div
@@ -376,9 +385,9 @@
                     src="images/card1.png"
                     alt="AIPPM"
                     style="
-                      width: 280px;
+                      width: 380px;
                       height: 280px;
-                      margin-top: -30px;
+                      margin-top: -17px;
                       object-fit: contain;
                       margin-bottom: 16px;
                       border-radius: 1rem;
@@ -391,13 +400,14 @@
                     Diplomind Evolve
                   </h2>
                   <p class="card-text text-start w-100" style="color: #fff">
-                    <h4 class="text-heading fw-bold text-start w-100">Personal growth :</h4> Level up your confidence, leadership, and
-                    clarity with our <br>self-paced power modules.
+                    <h4 class="text-heading fw-bold text-start w-100">Personal growth :</h4>
+                    Level up your confidence, leadership, and clarity with our <br>self-paced power modules.
                   </p>
                 </div>
               </div>
             </a>
           </div>
+
           <div class="col-12 col-md-4">
             <a href="card2page.html" class="text-decoration-none">
               <div
@@ -409,9 +419,9 @@
                     src="images/card2.png"
                     alt="chirag"
                     style="
-                      width: 280px;
+                      width: 380px;
                       height: 280px;
-                      margin-top: -30px;
+                      margin-top: -17px;
                       object-fit: contain;
                       margin-bottom: 16px;
                       border-radius: 1rem;
@@ -431,6 +441,7 @@
               </div>
             </a>
           </div>
+          <!-- Card 3 -->
           <div class="col-12 col-md-4">
             <a href="card3page.html" class="text-decoration-none">
               <div
@@ -442,9 +453,9 @@
                     src="images/card3.png"
                     alt="UNSC"
                     style="
-                      width: 280px;
+                      width: 380px;
                       height: 280px;
-                      margin-top: -30px;
+                      margin-top: -17px;
                       object-fit: contain;
                       margin-bottom: 16px;
                       border-radius: 1rem;
