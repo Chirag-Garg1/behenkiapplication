@@ -50,44 +50,61 @@
         background: #e0d7f7;
         color: #2c1c75;
       }
-    </style>
-  </head>
-  <body>
-    <div
-      style="
+      .hero-flex {
         position: absolute;
         top: 84px;
         left: 52px;
         display: flex;
-        align-items: flex-start;
-      "
-    >
-      <div
-        style="
-          font-family: 'Montserrat', sans-serif;
-          font-weight: bold;
-          color: #fff;
-          font-size: 5rem;
-          line-height: 0.95;
-          letter-spacing: 1px;
-          margin-right: 32px;
-          text-shadow: 0 0 16px #000, 0 2px 8px #000, 0 0 24px #000;
-        "
-      >
-        Diplomind <br />Evolve
-      </div>
-      <img
-        src="images/brain.png"
-        alt="Brain"
-        style="
-          height: 32.5rem;
-          width: auto;
-          margin-top: 10px;
-          margin-left: -250px;
-          filter: drop-shadow(0 0 40px #000) drop-shadow(0 0 80px #000);
-          opacity: 0.92;
-        "
-      />
+        flex-direction: row-reverse; /* Image on right, text on left */
+        align-items: center;
+      }
+      .brain-img {
+        height: 32.5rem;
+        width: auto;
+        margin-top: 10px;
+        filter: drop-shadow(0 0 40px #000) drop-shadow(0 0 80px #000);
+        opacity: 0.92;
+      }
+      .hero-heading {
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+        color: #fff;
+        font-size: 5rem;
+        line-height: 0.95;
+        letter-spacing: 1px;
+        margin-left: 32px;
+        text-shadow: 0 0 16px #000, 0 2px 8px #000, 0 0 24px #000;
+      }
+
+      @media (max-width: 768px) {
+        .hero-flex {
+          position: static !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          left: 0 !important;
+          top: 0 !important;
+          width: 100% !important;
+          margin: 0 !important;
+        }
+        .brain-img {
+          height: 8rem !important;
+          margin: 0 0 12px 0 !important;
+          width: auto !important;
+        }
+        .hero-heading {
+          font-size: 2.2rem !important;
+          text-align: center !important;
+          margin: 0 !important;
+          line-height: 1.1 !important;
+          margin-left: 0 !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero-flex">
+      <img src="images/brain.png" alt="Brain" class="brain-img" />
+      <div class="hero-heading">Diplomind <br />Evolve</div>
     </div>
   </body>
 </html>
