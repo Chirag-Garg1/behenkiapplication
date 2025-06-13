@@ -1,78 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AIPPM - Card 1 Page</title>
-    <style>
-      body {
-        background: linear-gradient(
-          to bottom,
-          #7a2ff7 0%,
-          #4a0d99 60%,
-          #1a0033 100%
-        );
-        color: #fff;
-        font-family: "Montserrat", sans-serif;
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diplomind Delegate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Montserrat", sans-serif;
+      background: linear-gradient(to bottom, #7a2ff7 0%, #4a0d99 60%, #1a0033 100%);
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 32px;
+      flex-wrap: wrap;
+    }
+
+    header nav {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      opacity: 0.85;
+    }
+
+    header a:hover {
+      opacity: 1;
+    }
+
+    .sign-up-btn {
+      padding: 8px 18px;
+      border-radius: 20px;
+      border: 1px solid #fff;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #e0d7f7;
+      margin-bottom: 28px;
+      max-width: 600px;
+      margin-inline: auto;
+    }
+
+    .request-btn {
+      padding: 14px 26px;
+      background: linear-gradient(to right, #5f27cd, #a463ff);
+      border: none;
+      border-radius: 30px;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .request-btn:hover {
+      background: #7e3ff2;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      backdrop-filter: blur(12px);
+      min-width: 280px;
+    }
+
+    .resources-card {
+      flex: 1;
+      max-width: 300px;
+    }
+
+    .committees-card {
+      flex: 2;
+      min-width: 400px;
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+
+    .card-item {
+      background: rgba(255,255,255,0.08);
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-weight: 500;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+
+    .tag-container {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      padding: 10px 16px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .tag:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* Modal Styles */
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .modal iframe {
+      width: 90%;
+      height: 85%;
+      border: none;
+      box-shadow: 0 0 30px rgba(255,255,255,0.3);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px; right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
       }
-      .container {
-        max-width: 500px;
-        margin: 60px auto;
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 20px;
-        padding: 32px 24px;
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+
+      header {
+        flex-direction: column;
+        gap: 12px;
         text-align: center;
       }
-      h1 {
-        color: #fff;
-        margin-bottom: 16px;
+
+      .card-grid {
+        flex-direction: column;
+        align-items: stretch;
       }
-      p {
-        color: #e0d7f7;
-        font-size: 1.1rem;
+
+      .resources-card,
+      .committees-card {
+        max-width: 100%;
+        flex: 1 1 100%;
       }
-      a {
-        color: #fff;
-        text-decoration: underline;
+    }
+  </style>
+
+  <script>
+    function openModal() {
+      document.getElementById("pdfModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("pdfModal").style.display = "none";
+    }
+
+    // Disable right-click
+    document.addEventListener("contextmenu", e => e.preventDefault());
+
+    // Disable certain keys
+    document.addEventListener("keydown", function(e) {
+      if ((e.ctrlKey || e.metaKey) && ['p', 's', 'u'].includes(e.key.toLowerCase())) {
+        e.preventDefault();
       }
-      .back-btn {
-        display: inline-block;
-        margin-top: 24px;
-        padding: 10px 24px;
-        background: #fff;
-        color: #490d99;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background 0.2s, color 0.2s;
-      }
-      .back-btn:hover {
-        background: #e0d7f7;
-        color: #2c1c75;
-      }
-    </style>
-  </head>
-  <body>
-    <div style="position: absolute; top: 24px; left: 32px; font-family: 'Montserrat', sans-serif; font-weight: bold; color: #fff; font-size: 3rem; letter-spacing: 1px;">
-      Diplomind Delegate
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <div style="font-weight: bold; font-size: 1.6rem;">Diplomind</div>
+    <nav>
+      <a href="#">Features</a>
+      <a href="#">Blog</a>
+      <a href="#">Careers</a>
+      <a href="#">Supports</a>
+      <a href="#">Log in</a>
+      <a class="sign-up-btn" href="#">Sign up</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>DIPLOMIND DELEGATE</h1>
+    <p>Access MUN Blueprint cheat sheet for becoming the best delegate</p>
+    <button class="request-btn">+ Request Access</button>
+  </section>
+
+  <section class="card-grid">
+    <!-- Resources Card -->
+    <div class="card resources-card">
+      <h2>Resources</h2>
+      <div class="card-item" onclick="openModal()">
+        <span>MUN Blueprint</span>
+        <span>➔</span>
+      </div>
+      <div class="card-item">
+        <span>Cheat sheet to become the best delegate</span>
+        <span>➔</span>
+      </div>
     </div>
-    <div class="container">
-      <h1>AIPPM - All India Political Parties Meet</h1>
-      <p>
-        Welcome to the AIPPM page!<br />
-        Here you can explore everything about the All India Political Parties
-        Meet simulation.<br />
-        <br />
-        <strong>What is AIPPM?</strong><br />
-        The All India Political Parties Meet (AIPPM) simulates real-world Indian
-        politics. It’s where delegates represent political parties, debate
-        policies, and propose solutions on pressing national issues.
-      </p>
-      <a href="index.html" class="back-btn">← Back to Home</a>
+
+    <!-- Committees Card -->
+    <div class="card committees-card">
+      <h2>Committees</h2>
+      <div class="tag-container">
+        <div class="tag">UNGA</div>
+        <div class="tag">WHO</div>
+        <div class="tag">HRC</div>
+      </div>
+      <p style="margin-top: 16px; color: #ccc;">Research country's</p>
     </div>
-  </body>
+  </section>
+
+  <!-- Modal PDF Viewer -->
+  <div id="pdfModal" class="modal">
+    <div class="modal-close" onclick="closeModal()">×</div>
+    <iframe src="images/Themunblueprint.pdf#toolbar=0"></iframe>
+  </div>
+</body>
 </html>
