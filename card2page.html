@@ -1,306 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Diplomind Delegate</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diplomind Delegate</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Montserrat", sans-serif;
-      background: linear-gradient(to bottom, #7a2ff7 0%, #4a0d99 60%, #1a0033 100%);
-      color: white;
-      min-height: 100vh;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 24px 32px;
-      flex-wrap: wrap;
-    }
-
-    header nav {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    header a {
-      color: white;
-      text-decoration: none;
-      opacity: 0.85;
-    }
-
-    header a:hover {
-      opacity: 1;
-    }
-
-    .sign-up-btn {
-      padding: 8px 18px;
-      border-radius: 20px;
-      border: 1px solid #fff;
-      font-weight: bold;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 80px 20px 40px;
-    }
-
-    .hero h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      color: #e0d7f7;
-      margin-bottom: 28px;
-      max-width: 600px;
-      margin-inline: auto;
-    }
-
-    .request-btn {
-      padding: 14px 26px;
-      background: linear-gradient(to right, #5f27cd, #a463ff);
-      border: none;
-      border-radius: 30px;
-      color: white;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .request-btn:hover {
-      background: #7e3ff2;
-    }
-
-    .card-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 24px;
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 16px;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.06);
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(12px);
-      min-width: 280px;
-    }
-
-    .resources-card {
-      flex: 1;
-      max-width: 300px;
-    }
-
-    .committees-card {
-      flex: 2;
-      min-width: 400px;
-    }
-
-    .card h2 {
-      font-size: 1.5rem;
-      margin-bottom: 16px;
-    }
-
-    .card-item {
-      background: rgba(255, 255, 255, 0.08);
-      padding: 14px 20px;
-      border-radius: 12px;
-      font-weight: 500;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-      cursor: pointer;
-    }
-
-    .tag-container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      justify-items: center;
-      margin-top: 20px;
-    }
-
-    .tag {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .tag:hover {
-      transform: scale(1.05);
-    }
-
-    .tag img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-    }
-
-    .tag img:hover {
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
-      transform: scale(1.1);
-    }
-
-    .tag span {
-      margin-top: 8px;
-      font-weight: 600;
-      color: #ffffff;
-    }
-
-    .modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-
-    .modal iframe {
-      width: 90%;
-      height: 85%;
-      border: none;
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 2rem;
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    @media (max-width: 992px) {
-      .tag-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 576px) {
-      .tag-container {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 2rem;
+    <style>
+      body {
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        background: linear-gradient(
+          to bottom,
+          #7a2ff7 0%,
+          #4a0d99 60%,
+          #1a0033 100%
+        );
+        color: white;
+        min-height: 100vh;
       }
 
       header {
-        flex-direction: column;
-        gap: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 32px;
+        flex-wrap: wrap;
+      }
+
+      header nav {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      header a {
+        color: white;
+        text-decoration: none;
+        opacity: 0.85;
+      }
+
+      header a:hover {
+        opacity: 1;
+      }
+
+      .sign-up-btn {
+        padding: 8px 18px;
+        border-radius: 20px;
+        border: 1px solid #fff;
+        font-weight: bold;
+      }
+
+      .hero {
         text-align: center;
+        padding: 80px 20px 40px;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        color: #e0d7f7;
+        margin-bottom: 28px;
+        max-width: 600px;
+        margin-inline: auto;
+      }
+
+      .request-btn {
+        padding: 14px 26px;
+        background: linear-gradient(to right, #5f27cd, #a463ff);
+        border: none;
+        border-radius: 30px;
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .request-btn:hover {
+        background: #7e3ff2;
       }
 
       .card-grid {
-        flex-direction: column;
-        align-items: stretch;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 0 16px;
       }
 
-      .resources-card,
+      .card {
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 20px;
+        padding: 24px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(12px);
+        min-width: 280px;
+      }
+
+      .resources-card {
+        flex: 1;
+        max-width: 300px;
+      }
+
       .committees-card {
-        max-width: 100%;
-        flex: 1 1 100%;
+        flex: 2;
+        min-width: 400px;
       }
-    }
-  </style>
 
-  <script>
-    function openModal() {
-      document.getElementById("pdfModal").style.display = "flex";
-    }
-
-    function closeModal() {
-      document.getElementById("pdfModal").style.display = "none";
-    }
-
-    document.addEventListener("contextmenu", (e) => e.preventDefault());
-
-    document.addEventListener("keydown", function (e) {
-      if ((e.ctrlKey || e.metaKey) && ["p", "s", "u"].includes(e.key.toLowerCase())) {
-        e.preventDefault();
+      .card h2 {
+        font-size: 1.5rem;
+        margin-bottom: 16px;
       }
-    });
-  </script>
-</head>
 
-<body>
-  <header>
-    <a href="index.html" title="Go to Home Page">
-      <img src="images/LogBGRemoved.png" alt="DIPLOMIND Logo" style="height: 40px"/>
-    </a>
-    <a href="index.html" class="menu-icon" title="Go to Home Page" style="text-decoration: none; margin-top: -10px">
-      <i class="fas fa-home" style="font-size: 14px; color: white"></i>
-    </a>
-  </header>
+      .card-item {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 14px 20px;
+        border-radius: 12px;
+        font-weight: 500;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        cursor: pointer;
+      }
 
-  <section class="hero">
-    <h1>DIPLOMIND DELEGATE</h1>
-    <p>Access MUN Blueprint cheat sheet for becoming the best delegate</p>
-    <button class="request-btn">+ Request Access</button>
-  </section>
+      .tag-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        justify-items: center;
+        margin-top: 20px;
+      }
 
-  <section class="card-grid">
-    <div class="card resources-card">
-      <h2>Resources</h2>
-      <div class="card-item" onclick="openModal()">
-        <span>MUN Blueprint</span>
-        <span>➔</span>
+      .tag {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .tag:hover {
+        transform: scale(1.05);
+      }
+
+      .tag img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+      }
+
+      .tag img:hover {
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+        transform: scale(1.1);
+      }
+
+      .tag span {
+        margin-top: 8px;
+        font-weight: 600;
+        color: #ffffff;
+      }
+
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+
+      .modal iframe {
+        width: 90%;
+        height: 85%;
+        border: none;
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      @media (max-width: 992px) {
+        .tag-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .tag-container {
+          display: grid !important;
+          grid-template-columns: repeat(4, 1fr) !important;
+          gap: 12px !important;
+          justify-items: center !important;
+        }
+        .tag {
+          max-width: 70px !important;
+          width: 100% !important;
+        }
+        /* Header layout for mobile */
+        header {
+          display: flex !important;
+          justify-content: space-between !important;
+          align-items: center !important;
+          padding: 12px 16px !important;
+          position: relative !important;
+        }
+        header a.menu-icon {
+          order: 2;
+          margin-top: 0 !important;
+        }
+        header a:first-child {
+          order: 1;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .tag-container {
+          grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        header {
+          flex-direction: column;
+          gap: 12px;
+          text-align: center;
+        }
+
+        .card-grid {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .resources-card,
+        .committees-card {
+          max-width: 100%;
+          flex: 1 1 100%;
+        }
+      }
+    </style>
+
+    <script>
+      function openModal() {
+        document.getElementById("pdfModal").style.display = "flex";
+      }
+
+      function closeModal() {
+        document.getElementById("pdfModal").style.display = "none";
+      }
+
+      document.addEventListener("contextmenu", (e) => e.preventDefault());
+
+      document.addEventListener("keydown", function (e) {
+        if (
+          (e.ctrlKey || e.metaKey) &&
+          ["p", "s", "u"].includes(e.key.toLowerCase())
+        ) {
+          e.preventDefault();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- Header HTML -->
+    <header
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+      "
+    >
+      <a href="index.html" title="Go to Home Page">
+        <img
+          src="images/LogBGRemoved.png"
+          alt="DIPLOMIND Logo"
+          style="height: 40px"
+        />
+      </a>
+      <a href="index.html" class="menu-icon" title="Go to Home Page">
+        <i class="fas fa-home"></i>
+      </a>
+    </header>
+
+    <section class="hero">
+      <h1>DIPLOMIND DELEGATE</h1>
+      <p>Access MUN Blueprint cheat sheet for becoming the best delegate</p>
+      <button class="request-btn">+ Request Access</button>
+    </section>
+
+    <section class="card-grid">
+      <div class="card resources-card">
+        <h2>Resources</h2>
+        <div class="card-item" onclick="openModal()">
+          <span>MUN Blueprint</span>
+          <span>➔</span>
+        </div>
+        <div class="card-item">
+          <span>Cheat sheet to become the best delegate</span>
+          <span>➔</span>
+        </div>
       </div>
-      <div class="card-item">
-        <span>Cheat sheet to become the best delegate</span>
-        <span>➔</span>
+
+      <div class="card committees-card">
+        <h2>Committees</h2>
+        <div class="tag-container">
+          <a href="page1.html" class="tag"
+            ><img src="images/1.jpg" alt="UNGA" /><span>UNGA</span></a
+          >
+          <a href="page2.html" class="tag"
+            ><img src="images/2.jpg" alt="WHO" /><span>WHO</span></a
+          >
+          <a href="page3.html" class="tag"
+            ><img src="images/3.jpg" alt="HRC" /><span>HRC</span></a
+          >
+          <a href="page4.html" class="tag"
+            ><img src="images/4.jpg" alt="AIPPM" /><span>AIPPM</span></a
+          >
+          <a href="page5.html" class="tag"
+            ><img src="images/5.jpg" alt="LOK SABHA" /><span>LOK SABHA</span></a
+          >
+          <a href="page6.html" class="tag"
+            ><img src="images/6.jpg" alt="UNSC" /><span>UNSC</span></a
+          >
+          <a href="page7.html" class="tag"
+            ><img src="images/7.jpg" alt="UNCSW" /><span>UNCSW</span></a
+          >
+          <a href="page8.html" class="tag"
+            ><img src="images/8.jpg" alt="UNEP" /><span>UNEP</span></a
+          >
+        </div>
       </div>
+    </section>
+
+    <div id="pdfModal" class="modal">
+      <div class="modal-close" onclick="closeModal()">×</div>
+      <iframe src="images/Themunblueprint.pdf#toolbar=0"></iframe>
     </div>
-
-    <div class="card committees-card">
-      <h2>Committees</h2>
-      <div class="tag-container">
-        <a href="page1.html" class="tag"><img src="images/1.jpg" alt="UNGA"/><span>UNGA</span></a>
-        <a href="page2.html" class="tag"><img src="images/2.jpg" alt="WHO"/><span>WHO</span></a>
-        <a href="page3.html" class="tag"><img src="images/3.jpg" alt="HRC"/><span>HRC</span></a>
-        <a href="page4.html" class="tag"><img src="images/4.jpg" alt="AIPPM"/><span>AIPPM</span></a>
-        <a href="page5.html" class="tag"><img src="images/5.jpg" alt="LOK SABHA"/><span>LOK SABHA</span></a>
-        <a href="page6.html" class="tag"><img src="images/6.jpg" alt="UNSC"/><span>UNSC</span></a>
-        <a href="page7.html" class="tag"><img src="images/7.jpg" alt="UNCSW"/><span>UNCSW</span></a>
-        <a href="page8.html" class="tag"><img src="images/8.jpg" alt="UNEP"/><span>UNEP</span></a>
-      </div>
-      
-    </div>
-  </section>
-
-  <div id="pdfModal" class="modal">
-    <div class="modal-close" onclick="closeModal()">×</div>
-    <iframe src="images/Themunblueprint.pdf#toolbar=0"></iframe>
-  </div>
-</body>
+  </body>
 </html>
