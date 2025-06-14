@@ -262,6 +262,15 @@
           margin-top: 3px !important;
         }
       }
+
+      .display-4.fw-bold {
+        margin-bottom: 0.2em;
+        line-height: 0.85;
+      }
+
+      #Cards {
+        scroll-margin-top: 10px; /* Adjust as needed */
+      }
     </style>
   </head>
 
@@ -335,11 +344,11 @@
           <h1 class="display-4 fw-bold">Diplomind.</h1>
           <h6>Crafting Confident Speakers Through the Language of Diplomacy</h6>
           <!-- Opaque Button -->
+          <!-- Change the Explore Resources button to scroll to the Cards section -->
           <a
-            href="./images/Themunblueprint.pdf"
+            href="#Cards"
             class="btn btn-light mt-4"
             style="opacity: 0.8; font-weight: bold"
-            target="_blank"
           >
             Explore Resources
           </a>
@@ -370,7 +379,7 @@
     </div>
 
     <!-- Quick Links Cards Section -->
-    <div class="container mb-5" data-aos="fade-up">
+    <div id = Cards class="container mb-5" data-aos="fade-up">
       <div style="width: 100%; max-width: 1000px; margin: auto">
         <div class="row g-4">
           <!-- Card 1 -->
