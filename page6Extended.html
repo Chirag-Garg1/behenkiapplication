@@ -8,6 +8,10 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
     <style>
       body {
         font-family: "Montserrat", sans-serif;
@@ -30,7 +34,34 @@
         flex-direction: column;
         align-items: center;
       }
+
+      .back-btn {
+        position: absolute;
+        top: 32px;
+        right: 48px;
+        padding: 6px 14px;
+        background: #a463ff;
+        border-radius: 16px;
+        color: #fff;
+        font-weight: bold;
+        font-family: "Montserrat", sans-serif;
+        text-decoration: none;
+        z-index: 100;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+        transition: background 0.2s;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        border: none;
+        outline: none;
+        display: inline-block;
+      }
+
+      .back-btn:hover {
+        background: #7b3fe4;
+      }
+
       .glass-card {
+        position: relative;
         background: rgba(30, 20, 40, 0.55);
         border-radius: 28px;
         box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.25);
@@ -40,26 +71,22 @@
         backdrop-filter: blur(12px);
         border: 1.5px solid rgba(255, 255, 255, 0.08);
         margin-top: 48px;
-        padding-bottom: 38px;
+        margin-bottom: 48px;
       }
+
       .header-row {
         display: flex;
         align-items: center;
         gap: 18px;
         margin-bottom: 18px;
       }
+
       .header-row img {
         height: 56px;
         width: auto;
         object-fit: contain;
       }
-      .header-row span {
-        font-weight: 700;
-        font-size: 1.3rem;
-        letter-spacing: 1px;
-        color: #fff;
-        opacity: 0.95;
-      }
+
       .portal-title {
         text-align: center;
         font-size: 2.1rem;
@@ -68,171 +95,101 @@
         margin: 18px 0 32px 0;
         letter-spacing: 1px;
       }
+
       .flag-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
         gap: 18px;
         justify-items: center;
       }
+
       .flag-card {
         width: 100px;
         height: 100px;
-        min-width: 100px;
-        min-height: 100px;
-        max-width: 100px;
-        max-height: 100px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        box-sizing: border-box;
         background: rgba(255, 255, 255, 0.07);
-        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         border: 1px solid rgba(255, 255, 255, 0.06);
         border-radius: 12px;
-        padding: 0;
         transition: transform 0.15s, background 0.15s;
-        overflow: hidden;
       }
+
       .flag-card:hover {
         transform: translateY(-4px) scale(1.04);
         background: rgba(255, 255, 255, 0.13);
       }
+
       .flag-card img {
         width: 56px;
         height: 38px;
         object-fit: cover;
         border-radius: 4px;
         margin-bottom: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
         background: #fff;
       }
+
       .flag-card span {
-        display: block;
-        width: 100%;
-        word-break: break-word;
         font-size: 0.8rem;
+        color: #fff;
+        font-weight: 500;
+        text-align: center;
+        word-break: break-word;
+        width: 100%;
+        display: block;
         padding: 0 2px;
         box-sizing: border-box;
-        text-align: center;
         overflow-wrap: break-word;
-        color: #fff;
-         
-        font-weight: 500;
-        letter-spacing: 0.5px;
-        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.13);
-        text-decoration: none !important;
-        border-bottom: none !important;
       }
+
       @media (max-width: 600px) {
         .glass-card {
-          padding: 18px 2vw 18px 2vw;
-          margin-top: 24px;
+          padding: 18px 2vw;
         }
+
         .portal-title {
           font-size: 1.2rem;
-          margin: 12px 0 18px 0;
         }
+
         .flag-grid {
-          grid-template-columns: repeat(3, 1fr) !important;
+          grid-template-columns: repeat(3, 1fr);
           gap: 10px;
         }
+
         .flag-card {
           width: 90px;
           height: 90px;
         }
+
         .header-row img {
           height: 36px;
+        }
+        .back-btn {
+          top: 12px;
+          right: 12px;
+          padding: 8px 16px;
+          font-size: 0.9rem;
         }
       }
     </style>
   </head>
   <body>
     <div class="glass-card">
+      <a href="page6.html" class="back-btn" title="Back">← Back</a>
       <div class="header-row">
-        <img
-          src="images/LogBGRemoved.png"
-          alt="Diplomand Logo"
-          style="height: 66px; width: auto"
-        />
+        <img src="images/LogBGRemoved.png" alt="Diplomand Logo" />
       </div>
-      <div class="portal-title">UNICEF RESEARCH PORTAL</div>
+      <div class="portal-title">AIPPM RESEARCH PORTAL</div>
       <div class="flag-grid">
         <div class="flag-card">
           <img src="images/India.jpg" alt="India" />
-          <span>Angola</span>
+          <span>India</span>
         </div>
         <div class="flag-card">
           <img src="images/India.jpg" alt="India" />
-          <span>Egypt</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Ethiopia</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Kenya</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Nigeria</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Rwanda</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Albania</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Austria</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Belgium</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Bulgaria</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Czech</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Finland</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Czech Republic</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Denmark</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Estonia</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Finland</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Ireland</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Norway</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>France</span>
+          <span>Brazil</span>
         </div>
         <div class="flag-card">
           <img src="images/India.jpg" alt="India" />
@@ -240,55 +197,7 @@
         </div>
         <div class="flag-card">
           <img src="images/India.jpg" alt="India" />
-          <span>Russia</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Scotland</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Sweden</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Sanvian</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Poland</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Russia</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Scotland</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Sweden</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Switzerland</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Bangladesh</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Lebanon</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>North Korea</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Maldives</span>
+          <span>France</span>
         </div>
         <div class="flag-card">
           <img src="images/India.jpg" alt="India" />
@@ -296,32 +205,25 @@
         </div>
         <div class="flag-card">
           <img src="images/India.jpg" alt="India" />
-          <span>Bahrain</span>
+          <span>Australia</span>
         </div>
         <div class="flag-card">
           <img src="images/India.jpg" alt="India" />
-          <span>Oman</span>
+          <span>Canada</span>
         </div>
         <div class="flag-card">
           <img src="images/India.jpg" alt="India" />
-          <span>Oman</span>
+          <span>United Kingdom</span>
         </div>
         <div class="flag-card">
           <img src="images/India.jpg" alt="India" />
-          <span>Philippines</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Malaysia</span>
-        </div>
-        <div class="flag-card">
-          <img src="images/India.jpg" alt="India" />
-          <span>Pakistan</span>
+          <span>Russia</span>
         </div>
         <div class="flag-card">
           <img src="images/India.jpg" alt="India" />
           <span>China</span>
         </div>
+        <!-- Add more cards as needed -->
         <div class="flag-card">
           <img src="images/India.jpg" alt="India" />
           <span>Bhutan</span>
