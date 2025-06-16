@@ -18,7 +18,6 @@
         font-family: "Montserrat", sans-serif;
         margin: 0;
         padding: 0;
-
         background: radial-gradient(
           circle,
           rgba(119, 0, 255, 1) 64%,
@@ -27,7 +26,6 @@
           rgba(29, 33, 51, 1) 100%
         );
         background-size: cover;
-
         background-attachment: scroll;
         color: #ffffff;
       }
@@ -132,8 +130,8 @@
 
       .card h2 {
         font-size: 1.5rem;
-        margin-top: -5px; /* Reduce top margin */
-        margin-bottom: 20px; /* Adjust as needed */
+        margin-top: -5px;
+        margin-bottom: 20px;
         text-decoration: none !important;
       }
 
@@ -246,7 +244,7 @@
         }
 
         h2 {
-          margin-top: -8px; /* Even less space on mobile */
+          margin-top: -8px;
         }
       }
 
@@ -283,11 +281,14 @@
 
     <script>
       function openModal(x) {
+        const iframe = document.querySelector("#pdfModal iframe");
+        iframe.src = x + "#toolbar=0";
         document.getElementById("pdfModal").style.display = "flex";
       }
 
       function closeModal() {
         document.getElementById("pdfModal").style.display = "none";
+        document.querySelector("#pdfModal iframe").src = ""; // Clear iframe to stop PDF playback
       }
 
       document.addEventListener("contextmenu", (e) => e.preventDefault());
@@ -326,11 +327,11 @@
     <section class="card-grid">
       <div class="card resources-card">
         <h2>Resources</h2>
-        <div class="card-item" onclick="openModal('images/MUNBlueprint.pdf')">
+        <div class="card-item" onclick="openModal('images/Themunblueprint.pdf')">
           <span>MUN Blueprint</span>
           <span>➔</span>
         </div>
-        <div class="card-item" onclick="openModal('images/CheetSheet.pdf')">
+        <div class="card-item" onclick="openModal('images/CheatSheet.pdf')">
           <span>Cheat sheet to become the best delegate</span>
           <span>➔</span>
         </div>
@@ -369,7 +370,7 @@
 
     <div id="pdfModal" class="modal">
       <div class="modal-close" onclick="closeModal()">×</div>
-      <iframe src="images/Themunblueprint.pdf#toolbar=0"></iframe>
+      <iframe src=""></iframe>
     </div>
   </body>
 </html>
