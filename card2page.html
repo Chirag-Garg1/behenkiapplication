@@ -282,7 +282,7 @@
     </style>
 
     <script>
-      function openModal() {
+      function openModal(x) {
         document.getElementById("pdfModal").style.display = "flex";
       }
 
@@ -326,11 +326,11 @@
     <section class="card-grid">
       <div class="card resources-card">
         <h2>Resources</h2>
-        <div class="card-item" onclick="openModal()">
+        <div class="card-item" onclick="openModal('images/MUNBlueprint.pdf')">
           <span>MUN Blueprint</span>
           <span>➔</span>
         </div>
-        <div class="card-item">
+        <div class="card-item" onclick="openModal('images/CheetSheet.pdf')">
           <span>Cheat sheet to become the best delegate</span>
           <span>➔</span>
         </div>
