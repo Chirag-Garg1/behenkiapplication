@@ -272,7 +272,7 @@
           padding: 8px 10px;
           font-size: 0.5rem;
           border-radius: 12px;
-           
+
           margin-left: auto !important;
         }
         .tag {
@@ -306,9 +306,18 @@
           min-width: 180px;
           width: 80vw;
         }
+
+        .hero h1 {
+          font-size: 1.7rem;
+        }
+
+        .main-content-mobile-spacer {
+          margin-top: 32px;
+        }
       }
 
       .hero-section {
+        margin-top: 20px;
         position: relative;
         background-size: cover;
         z-index: 1;
@@ -358,74 +367,72 @@
       <!-- Back button only, styled as requested -->
       <a href="index.html" class="back-btn" title="Back">← Back</a>
     </header>
-
-    <section class="hero">
-      <h1>DIPLOMIND DELEGATE</h1>
-      <p>Access MUN Blueprint cheat sheet for becoming the best delegate</p>
-      <button class="request-btn" aria-label="Request Access">
-        + Request Access
-      </button>
-    </section>
-
-    <section class="card-grid">
-      <div class="card resources-card">
-        <h2>Resources</h2>
-        <div
-          class="card-item"
-          onclick="openModal('images/Themunblueprint.pdf')"
-        >
-          <span>MUN Blueprint</span>
-          <span>➔</span>
+    <div class="main-content-mobile-spacer">
+      <section class="hero">
+        <h1>DIPLOMIND DELEGATE</h1>
+        <p>Access MUN Blueprint cheat sheet for becoming the best delegate</p>
+        <button class="request-btn" aria-label="Request Access">
+          + Request Access
+        </button>
+      </section>
+      <section class="card-grid">
+        <div class="card resources-card">
+          <h2>Resources</h2>
+          <div
+            class="card-item"
+            onclick="openModal('images/Themunblueprint.pdf')"
+          >
+            <span>MUN Blueprint</span><span>➔</span>
+          </div>
+          <div class="card-item" onclick="openModal('images/CheatSheet.pdf')">
+            <span>Cheat sheet to become the best delegate</span><span>➔</span>
+          </div>
         </div>
-        <div class="card-item" onclick="openModal('images/CheatSheet.pdf')">
-          <span>Cheat sheet to become the best delegate</span>
-          <span>➔</span>
+        <div class="card committees-card">
+          <h2>Committees</h2>
+          <div class="tag-container">
+            <a href="page1.html" class="tag"
+              ><img src="images/1.jpg" alt="AIPPM Committee" /><span
+                >AIPPM</span
+              ></a
+            >
+            <a href="page2.html" class="tag"
+              ><img src="images/2.jpg" alt="Lok Sabha Committee" /><span
+                >LOK SABHA</span
+              ></a
+            >
+            <a href="page3.html" class="tag"
+              ><img src="images/3.jpg" alt="ECOSOC Committee" /><span
+                >ECOSOC</span
+              ></a
+            >
+            <a href="page4.html" class="tag"
+              ><img src="images/4.jpg" alt="UNSC Committee" /><span
+                >UNSC</span
+              ></a
+            >
+            <a href="page5.html" class="tag"
+              ><img src="images/5.jpg" alt="WHO Committee" /><span>WHO</span></a
+            >
+            <a href="page6.html" class="tag"
+              ><img src="images/6.jpg" alt="UNICEF Committee" /><span
+                >UNICEF</span
+              ></a
+            >
+            <a href="page7.html" class="tag"
+              ><img src="images/7.jpg" alt="UNHRC Committee" /><span
+                >UNHRC</span
+              ></a
+            >
+            <a href="page8.html" class="tag"
+              ><img src="images/8.jpg" alt="UNCSW Committee" /><span
+                >UNCSW</span
+              ></a
+            >
+          </div>
         </div>
-      </div>
-
-      <div class="card committees-card">
-        <h2>Committees</h2>
-        <div class="tag-container">
-          <a href="page1.html" class="tag"
-            ><img src="images/1.jpg" alt="AIPPM Committee" /><span
-              >AIPPM</span
-            ></a
-          >
-          <a href="page2.html" class="tag"
-            ><img src="images/2.jpg" alt="Lok Sabha Committee" /><span
-              >LOK SABHA</span
-            ></a
-          >
-          <a href="page3.html" class="tag"
-            ><img src="images/3.jpg" alt="ECOSOC Committee" /><span
-              >ECOSOC</span
-            ></a
-          >
-          <a href="page4.html" class="tag"
-            ><img src="images/4.jpg" alt="UNSC Committee" /><span>UNSC</span></a
-          >
-          <a href="page5.html" class="tag"
-            ><img src="images/5.jpg" alt="WHO Committee" /><span>WHO</span></a
-          >
-          <a href="page6.html" class="tag"
-            ><img src="images/6.jpg" alt="UNICEF Committee" /><span
-              >UNICEF</span
-            ></a
-          >
-          <a href="page7.html" class="tag"
-            ><img src="images/7.jpg" alt="UNHRC Committee" /><span
-              >UNHRC</span
-            ></a
-          >
-          <a href="page8.html" class="tag"
-            ><img src="images/8.jpg" alt="UNCSW Committee" /><span
-              >UNCSW</span
-            ></a
-          >
-        </div>
-      </div>
-    </section>
-
+      </section>
+    </div>
     <div id="pdfModal" class="modal" role="dialog" aria-modal="true">
       <button class="modal-close" onclick="closeModal()" aria-label="Close PDF">
         ×
