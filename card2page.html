@@ -240,60 +240,71 @@
       .back-btn:hover {
         background: rgba(255, 255, 255, 0.2);
       }
-      @media (max-width: 600px) {
+
+      @media (max-width: 768px) {
+        html,
+        body {
+          width: 100vw;
+          min-width: 0;
+          max-width: 100vw;
+          overflow-x: hidden;
+        }
+        .tag-container {
+          grid-template-columns: repeat(4, 1fr) !important;
+          gap: 10px !important;
+        }
+        .tag {
+          max-width: 55px !important;
+          padding: 4px 0 !important;
+        }
+        .tag img {
+          width: 38px !important;
+          height: 38px !important;
+          margin-bottom: 4px !important;
+        }
+        .tag span {
+          font-size: 0.62rem !important;
+          margin-top: 2px !important;
+          word-break: break-word;
+        }
         .back-btn {
-          margin-right: -35px; /* Move closer to the right edge */
+          /* Move closer to the right edge */
           padding: 8px 10px;
           font-size: 0.5rem;
           border-radius: 12px;
+           
+          margin-left: auto !important;
         }
-      }
-
-      @media (max-width: 992px) {
-        .tag-container {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      @media (max-width: 768px) {
-        .tag-container {
-          grid-template-columns: repeat(4, 1fr) !important;
-          gap: 12px !important;
-        }
-
         .tag {
           max-width: 70px !important;
         }
 
         header {
-          flex-direction: column;
-          gap: 12px;
-          text-align: center;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .hero {
-          margin-top: -100px;
-          margin-left: 30px;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: space-between;
+          width: 100vw;
+          padding: 12px 10px 0 10px;
         }
 
-        .tag-container {
-          grid-template-columns: 1fr;
+        header a[title="Go to Home Page"] {
+          position: static !important;
+          margin: 0 !important;
+          align-self: flex-start;
         }
 
-        .hero h1 {
-          font-size: 2rem;
-        }
-
-        .card-grid {
-          flex-direction: column;
-          align-items: stretch;
+        .back-btn {
+          position: static !important;
+          margin-left: auto !important;
+          margin-right: 12px !important;
+          align-self: flex-start;
         }
 
         .resources-card,
         .committees-card {
-          max-width: 100%;
+          max-width: 260px;
+          min-width: 180px;
+          width: 80vw;
         }
       }
 
