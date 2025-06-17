@@ -3,76 +3,210 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AIPPM - Card 1 Page</title>
+    <title>DiplorMind</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       body {
-        background: linear-gradient(
-          to bottom,
-          #7a2ff7 0%,
-          #4a0d99 60%,
-          #1a0033 100%
-        );
-        color: #fff;
         font-family: "Montserrat", sans-serif;
         margin: 0;
         padding: 0;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.8) 100%
+          ),
+          radial-gradient(
+            circle,
+            rgba(76, 44, 92, 1) 0%,
+            rgba(119, 0, 255, 1) 64%,
+            rgba(113, 0, 243, 1) 29%,
+            rgba(0, 0, 0, 1) 100%,
+            rgba(29, 33, 51, 1) 100%
+          );
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+        color: #ffffff;
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
         min-height: 100vh;
+        display: flex;
+        flex-direction: column;
       }
-      .container {
-        max-width: 500px;
-        margin: 60px auto;
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 20px;
-        padding: 32px 24px;
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-        text-align: center;
+
+      header {
+        position: absolute;
+        top: 30px;
+        width: 90%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
       }
-      h1 {
-        color: #fff;
-        margin-bottom: 16px;
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
       }
-      p {
-        color: #e0d7f7;
-        font-size: 1.1rem;
+
+      .logo-icon {
+        width: 30px;
+        height: 30px;
+        background: white;
+        border-radius: 50%;
       }
-      a {
-        color: #fff;
-        text-decoration: underline;
+
+      nav {
+        display: flex;
+        gap: 30px;
+        font-weight: 500;
       }
-      .back-btn {
-        display: inline-block;
-        margin-top: 24px;
-        padding: 10px 24px;
-        background: #fff;
-        color: #490d99;
-        border-radius: 8px;
+
+      nav a {
         text-decoration: none;
-        font-weight: bold;
-        transition: background 0.2s, color 0.2s;
+        color: white;
+        opacity: 0.85;
+        transition: opacity 0.3s ease;
       }
-      .back-btn:hover {
-        background: #e0d7f7;
-        color: #2c1c75;
+
+      nav a:hover {
+        opacity: 1;
+      }
+
+      main h1 {
+        font-size: 2.8rem;
+        font-weight: 900;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      main p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        margin-bottom: 40px;
+      }
+
+      .btn {
+        background: linear-gradient(to right, #6f00ff, #a463ff);
+        color: white;
+        padding: 14px 36px;
+        border-radius: 30px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .stars {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .star {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: white;
+        border-radius: 50%;
+        opacity: 0.8;
+      }
+
+      @media (max-width: 600px) {
+        main {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+        main h1 {
+          text-align: center;
+          width: 100%;
+          font-size:2.2rem;
+          line-height: 1.3;
+          /* Force four lines by adjusting max-width and word-break */
+          max-width: 90vw;
+          word-break: break-word;
+          white-space: normal;
+        }
+        main p {
+          text-align: center;
+          width: 100%;
+        }
+        .btn {
+          display: inline-block;
+          margin: 16px auto 0 auto;
+        }
       }
     </style>
+    <script>
+      // Add random stars
+      document.addEventListener("DOMContentLoaded", () => {
+        const starsContainer = document.createElement("div");
+        starsContainer.classList.add("stars");
+
+        for (let i = 0; i < 80; i++) {
+          const star = document.createElement("div");
+          star.classList.add("star");
+          star.style.top = `${Math.random() * 100}%`;
+          star.style.left = `${Math.random() * 100}%`;
+          star.style.width = star.style.height = `${Math.random() * 2 + 1}px`;
+          star.style.opacity = Math.random();
+          starsContainer.appendChild(star);
+        }
+
+        document.body.appendChild(starsContainer);
+      });
+    </script>
   </head>
   <body>
-    <div style="position: absolute; top: 24px; left: 32px; font-family: 'Montserrat', sans-serif; font-weight: bold; color: #fff; font-size: 3rem; letter-spacing: 1px;">
-      Diplomind Arena
-    </div>
-    <div class="container">
-      <h1>AIPPM - All India Political Parties Meet</h1>
+    <header>
+      <div class="logo">
+        <img
+          src="images/LogBGRemoved.png"
+          alt="DiplorMind Logo"
+          style="height: 80px; vertical-align: middle"
+        />
+      </div>
+      <nav>
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>
+        Discover and enter <br />
+        Debate Competitions <br />
+        with few clicks
+      </h1>
       <p>
-        Welcome to the AIPPM page!<br />
-        Here you can explore everything about the All India Political Parties
-        Meet simulation.<br />
-        <br />
-        <strong>What is AIPPM?</strong><br />
-        The All India Political Parties Meet (AIPPM) simulates real-world Indian
-        politics. It’s where delegates represent political parties, debate
-        policies, and propose solutions on pressing national issues.
+        Debate platforms help develop skills <br />
+        through written and spoken content.
       </p>
-      <a href="index.html" class="back-btn">← Back to Home</a>
-    </div>
+      <a href="#" class="btn">Coming Soon</a>
+    </main>
   </body>
 </html>
