@@ -146,10 +146,10 @@
         position: absolute;
         left: 15px;
         top: 0;
-        bottom: 0;
         width: 3px;
         background: #7b3fe4;
         box-shadow: 0 0 32px 8px #a463ff;
+        height: 0; /* will be set dynamically */
       }
       .slider-dot {
         position: absolute;
@@ -344,6 +344,28 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
       window.addEventListener("scroll", updateSliderDot);
+
+      function setTimelineLineHeight() {
+        const steps = document.querySelectorAll(".step-number");
+        const timelineLine = document.querySelector(".timeline-line");
+        if (steps.length && timelineLine) {
+          const first = steps[0].getBoundingClientRect();
+          const last = steps[steps.length - 1].getBoundingClientRect();
+          const container = document
+            .querySelector(".timeline-container")
+            .getBoundingClientRect();
+          // Height from center of first to center of last step-number
+          const start = first.top + first.height / 2 - container.top;
+          const end = last.top + last.height / 2 - container.top;
+          timelineLine.style.height = end - start + "px";
+          timelineLine.style.top = start + "px";
+        }
+      }
+      window.addEventListener("load", () => {
+        setTimelineLineHeight();
+      });
+      window.addEventListener("resize", setTimelineLineHeight);
+      window.addEventListener("scroll", setTimelineLineHeight);
     </script>
   </body>
 </html>
