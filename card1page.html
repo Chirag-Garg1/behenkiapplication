@@ -12,10 +12,10 @@
       body {
         background: radial-gradient(
           circle,
-          rgba(119, 0, 255, 1) 64%,
-          rgba(113, 0, 243, 1) 29%,
-          rgba(0, 0, 0, 1) 100%,
-          rgba(29, 33, 51, 1) 100%
+          rgb(40, 20, 50) 30%,
+          rgb(30, 10, 40) 60%,
+          rgba(0, 0, 0, 0.95) 85%,
+          rgba(0, 0, 0, 1) 100%
         );
         color: #fff;
         font-family: "Montserrat", sans-serif;
@@ -274,7 +274,7 @@
     <script>
       const timeline = document.getElementById("timeline");
       // Generate 20 steps dynamically
-      for (let i = 1; i <= 20; i++) {
+      for (let i = 1; i <= 21; i++) {
         const step = document.createElement("div");
         step.className = "step";
         step.innerHTML = `
