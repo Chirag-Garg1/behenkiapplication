@@ -3,134 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Diplomind Evolve</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <title>Timeline with Slider Starting from Step 1</title>
     <style>
       body {
-        background: radial-gradient(
-          circle,
-          rgba(119, 0, 255, 1) 64%,
-          rgba(113, 0, 243, 1) 29%,
-          rgba(0, 0, 0, 1) 100%,
-          rgba(29, 33, 51, 1) 100%
-        );
-        color: #fff;
-        font-family: "Montserrat", sans-serif;
         margin: 0;
         padding: 0;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .container {
-        text-align: center;
-        padding: 40px 20px;
-        max-width: 800px;
-        width: 100%;
-      }
-
-      .hero-flex {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-
-      .hero-text {
-        flex: 1 1 300px;
-        text-align: left;
-      }
-
-      .hero-heading {
-        font-size: 3rem;
-        font-weight: bold;
-        margin-bottom: 16px;
-      }
-
-      .hero-subtext {
-        font-size: 1.2rem;
-        color: #d5d1e5;
-        margin-bottom: 24px;
-      }
-
-      .start-btn {
-        background: #a463ff;
-        color: #fff;
-        padding: 12px 24px;
-        border-radius: 32px;
-        border: none;
-        font-size: 1rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background 0.3s ease;
-      }
-
-      .start-btn:hover {
-        background: #944fff;
-      }
-
-      .brain-img {
-        flex: 1 1 300px;
-        max-width: 320px;
-        width: 100%;
-        margin-top: 20px;
-      }
-
-      .card {
-        background: rgba(255, 255, 255, 0.06);
-        padding: 20px;
-        border-radius: 20px;
-        margin-top: 40px;
-        backdrop-filter: blur(10px);
-      }
-
-      .tabs {
-        display: flex;
-        gap: 20px;
-        margin-bottom: 16px;
-        justify-content: center;
-      }
-
-      .tab {
-        padding: 8px 16px;
-        border-radius: 12px;
-        background: #340066;
-        color: #fff;
-        font-weight: 500;
-        cursor: pointer;
-      }
-
-      .tab.active {
-        background: #a463ff;
-      }
-
-      .card-title {
-        font-size: 1.6rem;
-        font-weight: bold;
-        margin-top: 10px;
-      }
-
-      .back-btn {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background: rgba(255, 255, 255, 0.1);
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 0.8rem;
-        transition: background 0.3s ease;
-      }
-
-      .back-btn:hover {
-        background: rgba(255, 255, 255, 0.2);
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.7) 0%,
+            rgba(0, 0, 0, 0.95) 100%
+          ),
+          radial-gradient(
+            circle,
+            rgba(40, 20, 50, 1) 0%,
+            rgba(76, 44, 92, 1) 20%,
+            rgba(119, 0, 255, 0.7) 50%,
+            rgba(0, 0, 0, 1) 100%
+          );
+        color: #ccc;
+        font-family: "Montserrat", sans-serif;
       }
 
       .timeline-container {
@@ -140,6 +31,7 @@
         margin: 50px auto;
         padding-left: 50px;
       }
+
       .timeline-line {
         position: absolute;
         left: 15px;
@@ -149,6 +41,7 @@
         background: #7b3fe4;
         box-shadow: 0 0 32px 8px #a463ff;
       }
+
       .slider-dot {
         position: absolute;
         left: 8px;
@@ -160,10 +53,12 @@
         transition: top 0.2s ease-out;
         z-index: 10;
       }
+
       .timeline {
         position: relative;
         padding-left: 50px;
       }
+
       .step {
         position: relative;
         margin-bottom: 80px;
@@ -171,10 +66,12 @@
         transform: translateY(30px);
         transition: 0.6s ease all;
       }
+
       .step.in-view {
         opacity: 1;
         transform: translateY(0);
       }
+
       .step-number {
         position: absolute;
         top: 0;
@@ -190,89 +87,41 @@
         font-weight: bold;
         transition: 0.4s ease;
       }
+
       .step-number.glow {
         box-shadow: 0 0 15px 5px #a463ff;
       }
+
       .step-title {
         font-size: 1.1rem;
         font-weight: bold;
         color: #fff;
         margin-bottom: 6px;
       }
+
       .step-description {
         font-size: 0.95rem;
         color: #aaa;
       }
+
       .highlight {
         color: #ffd600;
-      }
-
-      @media (max-width: 768px) {
-        .hero-flex {
-          flex-direction: column;
-          text-align: center;
-        }
-
-        .hero-text {
-          text-align: center;
-        }
-
-        .hero-heading {
-          font-size: 2.2rem;
-        }
-
-        .hero-subtext {
-          font-size: 1rem;
-        }
-
-        .brain-img {
-          margin-top: -70px;
-          max-width: 300px;
-        }
-        .card {
-          margin-top: 5px;
-        }
-        .back-btn {
-          /* Move closer to the right edge */
-          padding: 8px 10px;
-          font-size: 0.5rem;
-          border-radius: 12px;
-        }
       }
     </style>
   </head>
   <body>
-    <a href="index.html" class="back-btn" title="Back">← Back</a>
-    <div class="container">
-      <div class="hero-flex">
-        <div class="hero-text">
-          <div class="hero-heading">Diplomind Evolve</div>
-          <div class="hero-subtext">
-            The Confidence Section, a transformative program with 20-step to
-            Confidence
-          </div>
-          <button class="start-btn">Start Now</button>
-        </div>
-        <img src="images/brain1.png" alt="Brain" class="brain-img" />
-      </div>
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+      <div class="slider-dot" id="sliderDot"></div>
 
-      <div class="card">
-        <div class="tabs">
-          <div class="tab active">Public Speaking</div>
-          <div class="tab">Leadership</div>
-        </div>
-        <div class="card-title">20-Step to Confidence</div>
-        <div class="timeline-container">
-          <div class="timeline-line"></div>
-          <div class="slider-dot" id="sliderDot"></div>
-          <div class="timeline" id="timeline">
-            <!-- Steps generated below -->
-          </div>
-        </div>
+      <div class="timeline" id="timeline">
+        <!-- Steps generated below -->
       </div>
     </div>
+
     <script>
       const timeline = document.getElementById("timeline");
+
       // Generate 20 steps dynamically
       for (let i = 1; i <= 20; i++) {
         const step = document.createElement("div");
@@ -284,16 +133,20 @@
       `;
         timeline.appendChild(step);
       }
+
       const sliderDot = document.getElementById("sliderDot");
+
       function updateSliderDot() {
         const steps = document.querySelectorAll(".step");
         let currentStepIndex = 0;
+
         steps.forEach((step, index) => {
           const rect = step.getBoundingClientRect();
           if (rect.top >= 0 && rect.top < window.innerHeight / 1.5) {
             currentStepIndex = index;
           }
         });
+
         // Remove glow from all step numbers
         steps.forEach((step, idx) => {
           const stepNum = step.querySelector(".step-number");
@@ -303,6 +156,7 @@
             stepNum.classList.remove("glow");
           }
         });
+
         // Optionally, handle in-view class for fade-in effect
         steps.forEach((step, idx) => {
           if (idx <= currentStepIndex) {
@@ -311,6 +165,7 @@
             step.classList.remove("in-view");
           }
         });
+
         const activeStep = steps[currentStepIndex];
         const containerTop = document
           .querySelector(".timeline-container")
@@ -319,6 +174,7 @@
         const offset = stepTop - containerTop + 10; // adjust as needed
         sliderDot.style.top = `${offset}px`;
       }
+
       // Ensure it starts on Step 1 even before scroll
       window.addEventListener("load", () => {
         const steps = document.querySelectorAll(".step");
@@ -341,6 +197,7 @@
         sliderDot.style.top = `${offset}px`;
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
+
       window.addEventListener("scroll", updateSliderDot);
     </script>
   </body>
