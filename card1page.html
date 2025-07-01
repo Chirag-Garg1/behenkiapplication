@@ -276,17 +276,64 @@
     </div>
     <script>
       const timeline = document.getElementById("timeline");
-      // Generate 20 steps dynamically
-      for (let i = 1; i <= 20; i++) {
+      // 10 custom steps as provided
+      const stepsData = [
+        {
+          title: "Clarity of Thought",
+          desc: "Your mind is the first stage.",
+        },
+        {
+          title: "Evolve a Strong Mindset",
+          desc: "Replace doubt with power. Speak to yourself like you matter.",
+        },
+        {
+          title: "Body Language & Posture",
+          desc: "Be confident without speaking.",
+        },
+        {
+          title: "Use of Hands",
+          desc: "Speak with silence. Impact with movement.",
+        },
+        {
+          title: "Eye Contact",
+          desc: "Connect before you convince.",
+        },
+        {
+          title: "Vocal Power",
+          desc: "Your voice is an instrument — learn to play it.",
+        },
+        {
+          title: "Compliment Exchange with Others",
+          desc: "Boost self-worth through mutual respect.",
+        },
+        {
+          title: "Self-Presentation & Commanding Openings",
+          desc: "Just the way you want to be addressed. Command attention from the first word.",
+        },
+        {
+          title: "Express & Reflect",
+          desc: "Tell your story. Recognize your journey.",
+        },
+        {
+          title: "Lead Through Listening & Initiative",
+          desc: "Silent power. Lead the room. Speak with clarity, not clutter.",
+        },
+      ];
+
+      // Generate steps dynamically
+      for (let i = 0; i < stepsData.length; i++) {
         const step = document.createElement("div");
         step.className = "step";
         step.innerHTML = `
-        <div class="step-number">${String(i).padStart(2, "0")}</div>
-        <div class="step-title"><span class="highlight">Step ${i}</span> Title Here</div>
-        <div class="step-description">This is a sample description for step ${i}.</div>
-      `;
+          <div class="step-number">${String(i + 1).padStart(2, "0")}</div>
+          <div class="step-title"><span class="highlight">${
+            stepsData[i].title
+          }</span></div>
+          <div class="step-description">${stepsData[i].desc}</div>
+        `;
         timeline.appendChild(step);
       }
+
       const sliderDot = document.getElementById("sliderDot");
       function updateSliderDot() {
         const steps = document.querySelectorAll(".step");
