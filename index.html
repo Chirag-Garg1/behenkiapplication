@@ -31,18 +31,17 @@
         font-family: "Montserrat", sans-serif; /* Set Montserrat as the default font */
         margin: 0;
         padding: 0;
-        background: #4c2c5c;
-        background: radial-gradient(
+        background: 
+      radial-gradient(
           circle,
           rgba(76, 44, 92, 1) 0%,
           rgba(119, 0, 255, 1) 64%,
           rgba(113, 0, 243, 1) 29%,
           rgba(0, 0, 0, 1) 100%,
           rgba(29, 33, 51, 1) 100%
-        ); /* Updated radial gradient */
-        background-size: cover; /* Ensure the gradient covers the entire viewport */
-        background-position: center; /* Center the background */
-        background-attachment: scroll; /* Fix background scrolling issue on phones */
+        );
+        background-size: cover, cover;
+        background-blend-mode: overlay;
         color: #ffffff; /* Default text color */
       }
 
@@ -64,6 +63,15 @@
 
       /* Responsive Design for Mobile */
       @media (max-width: 768px) {
+        #Home {
+          background-size: contain !important;
+          background-position: top center !important;
+          min-height: 80vh !important;
+          margin-top: 0 !important;
+        }
+        #Home .row {
+          padding-top: 80px !important;
+        }
         #Home .row {
           flex-direction: column-reverse; /* Stack text above the image */
         }
@@ -347,37 +355,47 @@
     <!-- Header Section -->
     <div
       id="Home"
-      class="container mb-5 d-flex align-items-center justify-content-center"
+      class="container-fluid d-flex align-items-center justify-content-center"
       data-aos="fade-down"
-      style="min-height: 100vh; margin-top: -10px"
+      style="
+        min-height: 120vh;
+        margin-top: -120px;
+        background: url('images/ghoplu1.png') no-repeat center top;
+        background-size: cover;
+        position: relative;
+        padding: 0;
+      "
     >
-      <div class="row align-items-center text-center margin-top: -20px">
-        <div
-          class="col-md-8 col-12 text-white d-flex flex-column align-items-center"
-        >
-          <h1 class="display-4 fw-bold">Define.</h1>
-          <h1 class="display-4 fw-bold">Confide.</h1>
+      <div class="row align-items-center text-center w-100 justify-content-center" style="padding: 320px 0 0 0;">
+        <div class="col-12 d-flex flex-column align-items-center">
+          <h1 class="display-4 fw-bold">Define.  Confide.</h1>
           <h1 class="display-4 fw-bold">Diplomind.</h1>
           <h6>Crafting Confident Speakers Through the Language of Diplomacy</h6>
-          <!-- Opaque Button -->
-          <!-- Change the Explore Resources button to scroll to the Cards section -->
           <a
             href="#Cards"
             class="btn btn-light mt-4"
-            style="opacity: 0.8; font-weight: bold"
+            style="opacity: 0.85; font-weight: bold; z-index: 2; position: relative;"
           >
             Explore Resources
           </a>
         </div>
-        <div class="col-md-4 col-12">
-          <img
-            src="images/LogoBoy.png"
-            alt="Diplomind"
-            class="img-fluid"
-            style="max-height: 1500px; margin-left: -260px"
-          />
-        </div>
       </div>
+      <!-- Fade overlay for smooth background transition -->
+      <div style="
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 120px;
+        pointer-events: none;
+        background: linear-gradient(
+          to bottom,
+          rgba(76,44,92,0) 0%,
+          rgba(76,44,92,0.5) 60%,
+          rgba(76,44,92,1) 100%
+        );
+        z-index: 2;
+      "></div>
     </div>
     <!-- Scrolling Text -->
     <div
