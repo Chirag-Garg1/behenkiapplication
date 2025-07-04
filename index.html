@@ -6,43 +6,25 @@
     <title>Your Web App</title>
 
     <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
     <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css" />
 
     <style>
-      /* General Body Styles */
       body {
-        font-family: "Montserrat", sans-serif; /* Set Montserrat as the default font */
+        font-family: "Montserrat", sans-serif;
         margin: 0;
         padding: 0;
-        background: 
-      radial-gradient(
-          circle,
-          rgba(76, 44, 92, 1) 0%,
-          rgba(119, 0, 255, 1) 64%,
-          rgba(113, 0, 243, 1) 29%,
-          rgba(0, 0, 0, 1) 100%,
-          rgba(29, 33, 51, 1) 100%
-        );
+        background: radial-gradient(circle, rgba(76, 44, 92, 1) 0%, rgba(119, 0, 255, 1) 64%, rgba(113, 0, 243, 1) 29%, rgba(0, 0, 0, 1) 100%, rgba(29, 33, 51, 1) 100%);
         background-size: cover, cover;
         background-blend-mode: overlay;
-        color: #ffffff; /* Default text color */
+        color: #ffffff;
       }
 
       body::before {
@@ -52,203 +34,16 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: none; /* Remove the previous solid background color */
+        background: none;
         z-index: -1;
       }
 
-      /* Navbar Styles */
       .nav-item {
         font-size: small;
       }
 
-      /* Responsive Design for Mobile */
-      @media (max-width: 768px) {
-        #Home {
-          background-size: contain !important;
-          background-position: top center !important;
-          min-height: 80vh !important;
-          margin-top: 0 !important;
-        }
-        #Home .row {
-          padding-top: 80px !important;
-        }
-        #Home .row {
-          flex-direction: column-reverse; /* Stack text above the image */
-        }
-        #Home .col-md-4 {
-          display: flex;
-          justify-content: flex-end; /* Align image to the right */
-        }
-        #Home h1 {
-          font-size: 2rem; /* Adjust font size for smaller screens */
-        }
-        .scrolling-text-container {
-          margin-top: -20px; /* Adjust scrolling text position */
-        }
-        img.img-fluid {
-          max-height: 500px; /* Reduce image size for mobile */
-        }
-        body {
-          background-attachment: scroll; /* Ensure smooth scrolling on mobile */
-        }
-      }
-
-      /* 3D Card Styles */
-      .card-3d {
-        background-color: #f8f9fa;
-        border-radius: 50%; /* Ensures the shape is circular */
-        margin: auto;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        padding: 40px 20px;
-        text-align: center;
-        transition: transform 0.3s ease;
-        cursor: pointer;
-        width: 150px; /* Fixed width for circular shape */
-        height: 150px; /* Fixed height for circular shape */
-      }
-
-      .card-3d:hover {
-        transform: translateY(-5px) scale(1.03);
-      }
-
-      .card-text {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: #212529;
-      }
-
-      a.text-decoration-none {
-        text-decoration: none !important;
-      }
-
-      /* Scrolling Text Styles */
-      .scrolling-text-container {
-        width: 100%; /* Full width of the container */
-        overflow: hidden; /* Hide overflowing text */
-        border-radius: 15px;
-        padding: 20px 0;
-        margin-bottom: 60px;
-        position: relative;
-      }
-
-      .scrolling-text {
-        display: inline-block;
-        white-space: nowrap;
-        animation: scroll-infinite 10s linear infinite; /* Faster scrolling animation */
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #ffffff;
-      }
-
-      @keyframes scroll-infinite {
-        0% {
-          transform: translateX(5%); /* Start at the initial position */
-        }
-        100% {
-          transform: translateX(-100%); /* Move fully to the left */
-        }
-      }
-
-      /* Section Scroll Margin */
-      #about-us,
-      #committee,
-      #Home {
-        scroll-margin-top: 150px;
-      }
-
-      #about-us {
-        scroll-margin-top: 300px;
-      }
-
-      #Cards {
-        scroll-margin-top: 300px;
-      }
-
-      /* Social Media Icon Styles */
-      .social-icon {
-        width: 50px;
-        height: 50px;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-
-      .social-icon:hover {
-        transform: scale(1.1);
-      }
-
-      /* Navbar Link Styles */
-      .navbar-nav .nav-link {
-        color: #fff !important;
-        transition: color 0.3s;
-      }
-
-      .navbar-nav .nav-link:hover {
-        color: #ffd700 !important;
-      }
-
-      /* Carousel Styles */
-      .carousel-item {
-        font-size: 20px;
-      }
-
-      .carousel-control-prev-icon,
-      .carousel-control-next-icon {
-        filter: invert(1);
-      }
-
-      .about-container {
-        background: linear-gradient(135deg, #3b3b59, #8a2be2);
-        border-radius: 20px;
-        padding: 40px;
-        width: 90%;
-        max-width: 800px;
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        margin: auto;
-      }
-
-      .about-container h1 {
-        font-family: "Playfair Display", serif;
-        font-size: 48px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        text-align: center;
-        color: white;
-      }
-
-      .about-container p {
-        font-size: 18px;
-        margin-bottom: 20px;
-        text-align: center;
-        color: white;
-      }
-
-      .about-container ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      .about-container li {
-        font-size: 18px;
-        margin-bottom: 15px;
-        color: white;
-      }
-
-      .about-container li b {
-        color: #ffffff;
-        font-weight: 700;
-      }
-
-      /* Quick Links Cards Section */
       .dark-gradient-card {
-        background: linear-gradient(
-          to bottom,
-          #7a2ff7 0%,
-          #4a0d99 60%,
-          #1a0033 100%
-        );
-
+        background: linear-gradient(to bottom, #7a2ff7 0%, #4a0d99 60%, #1a0033 100%);
         color: #fff;
         border: none;
         transition: box-shadow 0.3s, border 0.3s;
@@ -263,156 +58,133 @@
         z-index: 2;
       }
 
-      .dark-gradient-card .card-body {
-        background: transparent;
-      }
+
+     
 
       @media (max-width: 768px) {
-        .card-body img[src*="card1.png"],
-        .card-body img[src*="card2.png"],
-        .card-body img[src*="card3.png"] {
-          margin-top: 3px !important;
+        #Home {
+          background-size: contain !important;
+          background-position: top center !important;
+          min-height: 75vh !important;
+          margin-top: -20px !important;
+        }
+        #Home .row {
+          padding-top: 40px !important;
+        }
+        #Home .col-12 {
+          margin-top: -10px;
+        }
+        #Home .row {
+          flex-direction: column-reverse;
+        }
+        #Home .col-md-4 {
+          display: flex;
+          justify-content: flex-end;
+        }
+        #Home h1 {
+          font-size: 2rem;
+        }
+        .scrolling-text-container {
+          margin-top: -180px !important;
+        }
+        img.img-fluid {
+          max-height: 400px;
+        }
+        body {
+          background-attachment: scroll;
         }
       }
 
-      .display-4.fw-bold {
-        margin-bottom: 0.2em;
-        line-height: 0.85;
-      }
+     @media (min-width: 992px) {
+  #Home .col-12.d-flex.flex-column.align-items-center {
+    margin-top: 220px !important;
+  }
+}
 
-      #Cards {
-        scroll-margin-top: 200px; /* Adjust as needed */
-      }
-
-      .card-3d img {
+      .scrolling-text-container {
         width: 100%;
-        max-width: 120px; /* Adjust as needed for your design */
-        height: auto;
-        display: block;
-        margin: 0 auto;
-        object-fit: cover;
-        border-radius: 50%;
+        overflow: hidden;
+        border-radius: 15px;
+        padding: 20px 0;
+        margin-bottom: 30px;
+        position: relative;
       }
 
-      h6 {
-        margin-top: 22px;
+      .scrolling-text {
+        display: inline-block;
+        white-space: nowrap;
+        animation: scroll-infinite 10s linear infinite;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ffffff;
+      }
+
+      @keyframes scroll-infinite {
+        0% {
+          transform: translateX(5%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .navbar-nav .nav-link {
+        color: #fff !important;
+        transition: color 0.3s;
+      }
+
+      .navbar-nav .nav-link:hover {
+        color: #ffd700 !important;
       }
     </style>
   </head>
 
   <body>
     <!-- Navbar -->
-    <nav
-      class="navbar navbar-expand-lg navbar-dark sticky-top"
-      style="
-        background-color: #490d99;
-        font-family: 'Montserrat', sans-serif;
-        padding: 0;
-        margin: 0;
-        height: auto;
-      "
-    >
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #490d99;">
       <div class="container-fluid px-3">
         <a class="navbar-brand" href="#Home">
-          <img
-            src="images/LogBGRemoved.png"
-            alt="Logo"
-            class="img-fluid"
-            style="max-height: 40px"
-          />
+          <img src="images/LogBGRemoved.png" alt="Logo" class="img-fluid" style="max-height: 40px" />
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#Home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about-us">About Us</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="#contact-us">Contact Us</a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about-us">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact-us">Contact Us</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
     <!-- Header Section -->
-    <div
-      id="Home"
-      class="container-fluid d-flex align-items-center justify-content-center"
-      data-aos="fade-down"
-      style="
-        min-height: 120vh;
-        margin-top: -120px;
-        background: url('images/ghoplu1.png') no-repeat center top;
-        background-size: cover;
-        position: relative;
-        padding: 0;
-      "
-    >
-      <div class="row align-items-center text-center w-100 justify-content-center" style="padding: 320px 0 0 0;">
-        <div class="col-12 d-flex flex-column align-items-center">
-          <h1 class="display-4 fw-bold">Define.  Confide.</h1>
+    <div id="Home" class="container-fluid d-flex align-items-center justify-content-center" data-aos="fade-down"
+      style="min-height: 120vh; margin-top: -140px; background: url('images/ghoplu1.png') no-repeat center top; background-size: cover; position: relative; padding: 0;">
+      <div class="row align-items-center text-center w-100 justify-content-center" style="padding: 20px 0 0 0;">
+        <div id="header-text" class="col-12 d-flex flex-column align-items-center">
+          <h1 class="display-4 fw-bold">Define. Confide.</h1>
           <h1 class="display-4 fw-bold">Diplomind.</h1>
-          <h6>Crafting Confident Speakers Through the Language of Diplomacy</h6>
-          <a
-            href="#Cards"
-            class="btn btn-light mt-4"
-            style="opacity: 0.85; font-weight: bold; z-index: 2; position: relative;"
-          >
+          <h6>Crafting Confident Speakers Through the Language of Diplomacy</h6>
+          <a href="#Cards" class="btn btn-light mt-4" style="opacity: 0.85; font-weight: bold; z-index: 2; position: relative;">
             Explore Resources
           </a>
         </div>
       </div>
-      <!-- Fade overlay for smooth background transition -->
-      <div style="
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 120px;
-        pointer-events: none;
-        background: linear-gradient(
-          to bottom,
-          rgba(76,44,92,0) 0%,
-          rgba(76,44,92,0.5) 60%,
-          rgba(76,44,92,1) 100%
-        );
-        z-index: 2;
-      "></div>
+      <div class="d-none d-md-block" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 80px; pointer-events: none; background: linear-gradient(to bottom, rgba(76,44,92,0) 0%, rgba(76,44,92,0.5) 60%, rgba(76,44,92,1) 100%); z-index: 2;"></div>
     </div>
+
     <!-- Scrolling Text -->
-    <div
-      class="scrolling-text-container text-center py-3"
-      data-aos="fade-up"
-      style="margin-top: -50px"
-    >
+    <div class="scrolling-text-container text-center py-3" data-aos="fade-up" style="margin-top: -20px;">
       <div class="scrolling-text">
-        Confidence • Diplomacy • Public Speaking • Research • MUN Mastery •
-        Leadership • Teamwork • Growth • Networking • Global Awareness •
-        Communication • Advocacy • Negotiation • Critical Thinking • Cultural
-        Exchange • Problem Solving • Empathy • Persuasion • Debate •
-        Collaboration •
+        Confidence • Diplomacy • Public Speaking • Research • MUN Mastery • Leadership • Teamwork • Growth • Networking • Global Awareness • Communication • Advocacy • Negotiation • Critical Thinking • Cultural Exchange • Problem Solving • Empathy • Persuasion • Debate • Collaboration •
       </div>
     </div>
 
     <!-- Quick Links Cards Section -->
+
+     <!-- Quick Links Cards Section -->
     <div id = Cards class="container mb-5" data-aos="fade-up">
       <div style="width: 100%; max-width: 1000px; margin: auto">
         <div class="row g-4">
@@ -521,8 +293,7 @@
       </div>
     </div>
 
-    <!-- About Us Section -->
-    <div id="about-us" class="container mb-5" data-aos="fade-up">
+       <div id="about-us" class="container mb-5" data-aos="fade-up">
       <div
         class="p-4 rounded-4 shadow mx-auto dark-gradient-card"
         style="width: 100%; max-width: 1000px"
@@ -558,7 +329,7 @@
       </div>
     </div>
 
-    <!-- Contact Us Section -->
+     <!-- Contact Us Section -->
     <div id="contact-us" class="container mb-5" data-aos="fade-up">
       <div
         class="p-4 rounded-4 shadow mx-auto"
@@ -603,8 +374,6 @@
     <!-- JS Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+    <script>AOS.init();</script>
   </body>
 </html>
