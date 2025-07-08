@@ -62,44 +62,7 @@
         z-index: 2;
       }
 
-      @media (max-width: 768px) {
-        #Home {
-          background-size: contain !important;
-          background-position: top center !important;
-          min-height: 75vh !important;
-          margin-top: -20px !important;
-        }
-        #Home .row {
-          padding-top: 40px !important;
-        }
-        #Home .col-12 {
-          margin-top: -10px;
-        }
-        #Home .row {
-          flex-direction: column-reverse;
-        }
-        #Home .col-md-4 {
-          display: flex;
-          justify-content: flex-end;
-        }
-        #Home h1 {
-          font-size: 2rem;
-        }
-        .scrolling-text-container {
-          margin-top: -130px !important;
-        }
-        img.img-fluid {
-          max-height: 400px;
-        }
-        body {
-          background-attachment: scroll;
-        }
-
-        #header-text {
-          padding-top: 20px !important; 
-          margin-top: 0 !important;
-        }
-      }
+     
 
       @media (min-width: 992px) {
         #Home .col-12.d-flex.flex-column.align-items-center {
@@ -107,11 +70,55 @@
         }
       }
 
-      @media (min-width: 768px) {
-        #header-text {
-          margin-top: -180px !important;
-        }
+     @media (max-width: 768px) {
+
+      #main-content-wrapper {
+        margin-top: -80px !important; /* Adjusted for better visibility on smaller screens */
       }
+
+      #Home {
+        background-size: contain !important;
+        background-position: top center !important;
+        min-height: 75vh !important;
+        margin-top: -60px !important; /* ⬅️ Raised from -20px to -60px for a higher position */
+      }
+
+      #Home .row {
+        padding-top: 20px !important;
+        flex-direction: column-reverse;
+      }
+
+      #Home .col-12 {
+        margin-top: -10px;
+      }
+
+      #Home .col-md-4 {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      #Home h1 {
+        font-size: 2rem;
+      }
+
+      .scrolling-text-container {
+        margin-top: -130px !important;
+      }
+
+      img.img-fluid {
+        max-height: 400px;
+      }
+
+      body {
+        background-attachment: scroll;
+      }
+
+      #header-text {
+        padding-top: 0 !important;
+        margin-top: -150px !important;
+      }
+}
+
 
       .scrolling-text-container {
         width: 100%;
@@ -202,93 +209,96 @@
           <h6>Crafting Confident Speakers Through the Language of Diplomacy</h6>
         </div>
       </div>
-      <!-- Scrolling Text fixed to bottom of header image -->
-      <div class="scrolling-text-container text-center" style="position: absolute; left: 0; right: 0; bottom: 0; width: 100%; margin: 0; border-radius: 0; padding: 8px 0; background: #fff;">
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div id="main-content-wrapper" >
+      <!-- Scrolling Text -->
+      <div class="scrolling-text-container text-center" style="position: static; margin: 0 0 8px 0; border-radius: 0; padding: 8px 0; background: #fff;">
         <div class="scrolling-text">
           Confidence • Diplomacy • Public Speaking • Research • MUN Mastery • Leadership • Teamwork • Growth • Networking • Global Awareness • Communication • Advocacy • Negotiation • Critical Thinking • Cultural Exchange • Problem Solving • Empathy • Persuasion • Debate • Collaboration •
         </div>
       </div>
-      <div class="d-none d-md-block" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 80px; pointer-events: none; background: linear-gradient(to bottom, rgba(76,44,92,0) 0%, rgba(76,44,92,0.5) 60%, rgba(76,44,92,1) 100%); z-index: 2;"></div>
-    </div>
 
-    <!-- Quick Links Cards Section -->
-    <div id="Cards" class="container mb-5" data-aos="fade-up">
-      <div style="width: 100%; max-width: 1000px; margin: auto">
-        <div class="row g-4">
-          <!-- Card 1 -->
-          <div class="col-12 col-md-4">
-            <a href="card1page.html" class="text-decoration-none">
-              <div class="card h-100 shadow rounded-4 text-start dark-gradient-card neon-hover" style="cursor: pointer; min-height: 420px">
-                <div class="card-body d-flex flex-column align-items-center">
-                  <img src="images/card1.png" alt="AIPPM" style="width: 380px; height: 280px; margin-top: -17px; object-fit: contain; margin-bottom: 16px; border-radius: 1rem;" />
-                  <h2 class="card-title fw-bold text-start w-100" style="color: #49eaff">Diplomind Evolve</h2>
-                  <p class="card-text text-start w-100" style="color: #fff">
-                    <h4 class="text-heading fw-bold text-start w-100">Personal growth :</h4>
-                    Level up your confidence, leadership, and clarity with our <br>self-paced power modules.
-                  </p>
+      <!-- Quick Links Cards Section -->
+      <div id="Cards" class="container mb-5" data-aos="fade-up">
+        <div style="width: 100%; max-width: 1000px; margin: auto">
+          <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-12 col-md-4">
+              <a href="card1page.html" class="text-decoration-none">
+                <div class="card h-100 shadow rounded-4 text-start dark-gradient-card neon-hover" style="cursor: pointer; min-height: 420px">
+                  <div class="card-body d-flex flex-column align-items-center">
+                    <img src="images/card1.png" alt="AIPPM" style="width: 380px; height: 280px; margin-top: -17px; object-fit: contain; margin-bottom: 16px; border-radius: 1rem;" />
+                    <h2 class="card-title fw-bold text-start w-100" style="color: #49eaff">Diplomind Evolve</h2>
+                    <p class="card-text text-start w-100" style="color: #fff">
+                      <h4 class="text-heading fw-bold text-start w-100">Personal growth :</h4>
+                      Level up your confidence, leadership, and clarity with our <br>self-paced power modules.
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </a>
-          </div>
+              </a>
+            </div>
 
-          <!-- Card 2 -->
-          <div class="col-12 col-md-4">
-            <a href="card2page.html" class="text-decoration-none">
-              <div class="card h-100 shadow rounded-4 text-start dark-gradient-card neon-hover" style="cursor: pointer; min-height: 420px">
-                <div class="card-body d-flex flex-column align-items-center">
-                  <img src="images/card2.png" alt="chirag" style="width: 380px; height: 280px; margin-top: -17px; object-fit: contain; margin-bottom: 16px; border-radius: 1rem;" />
-                  <h2 class="card-title fw-bold text-start w-100" style="color: #49eaff">Diplomind Delegate</h2>
-                  <p class="card-text text-start w-100" style="color: #fff">
-                    <h4 class="text-heading fw-bold text-start w-100">Model United Nations:</h4>
-                    Master diplomacy with agenda briefs, ROPs, and a smart research portal - built for both first-timers and fierce delegates.
-                  </p>
+            <!-- Card 2 -->
+            <div class="col-12 col-md-4">
+              <a href="card2page.html" class="text-decoration-none">
+                <div class="card h-100 shadow rounded-4 text-start dark-gradient-card neon-hover" style="cursor: pointer; min-height: 420px">
+                  <div class="card-body d-flex flex-column align-items-center">
+                    <img src="images/card2.png" alt="chirag" style="width: 380px; height: 280px; margin-top: -17px; object-fit: contain; margin-bottom: 16px; border-radius: 1rem;" />
+                    <h2 class="card-title fw-bold text-start w-100" style="color: #49eaff">Diplomind Delegate</h2>
+                    <p class="card-text text-start w-100" style="color: #fff">
+                      <h4 class="text-heading fw-bold text-start w-100">Model United Nations:</h4>
+                      Master diplomacy with agenda briefs, ROPs, and a smart research portal - built for both first-timers and fierce delegates.
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </a>
-          </div>
+              </a>
+            </div>
 
-          <!-- Card 3 -->
-          <div class="col-12 col-md-4">
-            <a href="card3page.html" class="text-decoration-none">
-              <div class="card h-100 shadow rounded-4 text-start dark-gradient-card neon-hover" style="cursor: pointer; min-height: 420px">
-                <div class="card-body d-flex flex-column align-items-center">
-                  <img src="images/card3.png" alt="UNSC" style="width: 380px; height: 280px; margin-top: -17px; object-fit: contain; margin-bottom: 16px; border-radius: 1rem;" />
-                  <h2 class="card-title fw-bold text-start w-100" style="color: #49eaff">Diplomind Arena</h2>
-                  <p class="card-text text-start w-100" style="color: #fff">
-                    <h4 class="text-heading fw-bold text-start w-100">Competition Hub:</h4>
-                    Get resources, formats, and strategies for debate, moot court, and all upcoming Diplomind competitions.
-                  </p>
+            <!-- Card 3 -->
+            <div class="col-12 col-md-4">
+              <a href="card3page.html" class="text-decoration-none">
+                <div class="card h-100 shadow rounded-4 text-start dark-gradient-card neon-hover" style="cursor: pointer; min-height: 420px">
+                  <div class="card-body d-flex flex-column align-items-center">
+                    <img src="images/card3.png" alt="UNSC" style="width: 380px; height: 280px; margin-top: -17px; object-fit: contain; margin-bottom: 16px; border-radius: 1rem;" />
+                    <h2 class="card-title fw-bold text-start w-100" style="color: #49eaff">Diplomind Arena</h2>
+                    <p class="card-text text-start w-100" style="color: #fff">
+                      <h4 class="text-heading fw-bold text-start w-100">Competition Hub:</h4>
+                      Get resources, formats, and strategies for debate, moot court, and all upcoming Diplomind competitions.
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </a>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- About Us -->
-    <div id="about-us" class="container mb-5" data-aos="fade-up">
-      <div class="p-4 rounded-4 shadow mx-auto dark-gradient-card" style="width: 100%; max-width: 1000px">
-        <h2 class="mb-4 text-center text-md-start fw-bold" style="color: #fff;">About Us</h2>
-        <p><strong>Diplomind is a space where future leaders evolve</strong> — through confidence-building, critical thinking, and real-world communication experiences.</p>
-        <p>Whether you’re stepping into your very first MUN or you’re already a seasoned delegate aiming higher, we’re here to help you think sharper, speak smarter, and lead with impact.</p>
-        <p>From tackling stage fear to acing global simulations, and from growing your voice to competing in thrilling, thought-provoking events — Diplomind is where doubts turn into dialogue, and quiet minds become confident ones.</p>
-        <p><strong>Because here, communication isn’t just taught —<br /> it’s transformed into your greatest strength.</strong></p>
+      <!-- About Us -->
+      <div id="about-us" class="container mb-5" data-aos="fade-up">
+        <div class="p-4 rounded-4 shadow mx-auto dark-gradient-card" style="width: 100%; max-width: 1000px">
+          <h2 class="mb-4 text-center text-md-start fw-bold" style="color: #fff;">About Us</h2>
+          <p><strong>Diplomind is a space where future leaders evolve</strong> — through confidence-building, critical thinking, and real-world communication experiences.</p>
+          <p>Whether you’re stepping into your very first MUN or you’re already a seasoned delegate aiming higher, we’re here to help you think sharper, speak smarter, and lead with impact.</p>
+          <p>From tackling stage fear to acing global simulations, and from growing your voice to competing in thrilling, thought-provoking events — Diplomind is where doubts turn into dialogue, and quiet minds become confident ones.</p>
+          <p><strong>Because here, communication isn’t just taught —<br /> it’s transformed into your greatest strength.</strong></p>
+        </div>
       </div>
-    </div>
 
-    <!-- Contact Us -->
-    <div id="contact-us" class="container mb-5" data-aos="fade-up">
-      <div class="p-4 rounded-4 shadow mx-auto" style="width: 100%; max-width: 1000px; background: #fff;">
-        <h2 class="mb-4 text-center text-md-start" style="color: #490d99;">Contact Us</h2>
-        <p style="color: #490d99;">You can reach us via email at <strong>diplomind.in@gmail.com</strong> or follow us on LinkedIn for updates and more.</p>
-        <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3">
-          <a href="mailto:diplomind.in@gmail.com" target="_blank">
-            <img src="images/gmail.jpg" alt="Gmail" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;" />
-          </a>
-          <a href="https://www.linkedin.com/in/diplomind" class="text-primary fs-3" target="_blank" style="display: flex; align-items: center">
-            <i class="fab fa-linkedin"></i>
-          </a>
+      <!-- Contact Us -->
+      <div id="contact-us" class="container mb-5" data-aos="fade-up">
+        <div class="p-4 rounded-4 shadow mx-auto" style="width: 100%; max-width: 1000px; background: #fff;">
+          <h2 class="mb-4 text-center text-md-start" style="color: #490d99;">Contact Us</h2>
+          <p style="color: #490d99;">You can reach us via email at <strong>diplomind.in@gmail.com</strong> or follow us on LinkedIn for updates and more.</p>
+          <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3">
+            <a href="mailto:diplomind.in@gmail.com" target="_blank">
+              <img src="images/gmail.jpg" alt="Gmail" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;" />
+            </a>
+            <a href="https://www.linkedin.com/in/diplomind" class="text-primary fs-3" target="_blank" style="display: flex; align-items: center">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
