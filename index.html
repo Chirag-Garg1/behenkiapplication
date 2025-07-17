@@ -17,185 +17,188 @@
     <link rel="stylesheet" href="css/styles.css" />
 
     <style>
-      body {
-        font-family: "Montserrat", sans-serif;
-        margin: 0;
-        padding: 0;
-        background: radial-gradient(circle, rgba(76, 44, 92, 1) 0%, rgba(119, 0, 255, 1) 64%, rgba(113, 0, 243, 1) 29%, rgba(0, 0, 0, 1) 100%, rgba(29, 33, 51, 1) 100%);
-        background-size: cover, cover;
-        background-blend-mode: overlay;
-        color: #ffffff;
-      }
+  body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, rgba(76, 44, 92, 1) 0%, rgba(119, 0, 255, 1) 64%, rgba(113, 0, 243, 1) 29%, rgba(0, 0, 0, 1) 100%, rgba(29, 33, 51, 1) 100%);
+    background-size: cover, cover;
+    background-blend-mode: overlay;
+    color: #ffffff;
+  }
 
-      body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: none;
-        z-index: -1;
-      }
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    z-index: -1;
+  }
 
-      #Cards {
-        margin-top: 30px; /* or any value like 100px for more space */
-      }
+  #Cards {
+    margin-top: 30px;
+  }
 
-      .nav-item {
-        font-size: small;
-      }
+  .nav-item {
+    font-size: small;
+  }
 
-      .dark-gradient-card {
-        background: linear-gradient(to bottom, #7a2ff7 0%, #4a0d99 60%, #1a0033 100%);
-        color: #fff;
-        border: none;
-        transition: box-shadow 0.3s, border 0.3s;
-        position: relative;
-        overflow: hidden;
-      }
+  .dark-gradient-card {
+    background: linear-gradient(to bottom, #7a2ff7 0%, #4a0d99 60%, #1a0033 100%);
+    color: #fff;
+    border: none;
+    transition: box-shadow 0.3s, border 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
 
-      .neon-hover:hover,
-      .neon-hover:focus {
-        box-shadow: 0 0 16px 2px #a020f0, 0 0 32px 4px #00fff7;
-        border: 2px solid #a020f0;
-        z-index: 2;
-      }
+  .neon-hover:hover,
+  .neon-hover:focus {
+    box-shadow: 0 0 16px 2px #a020f0, 0 0 32px 4px #00fff7;
+    border: 2px solid #a020f0;
+    z-index: 2;
+  }
 
-     
+  @media (min-width: 992px) {
+    #Home .col-12.d-flex.flex-column.align-items-center {
+      margin-top: 220px !important;
+    }
+  }
 
-      @media (min-width: 992px) {
-        #Home .col-12.d-flex.flex-column.align-items-center {
-          margin-top: 220px !important;
-        }
-      }
+  @media (max-width: 768px) {
+  #Home,
+  #header-text,
+  #main-content-wrapper,
+  #Cards,
+  .scrolling-text-container {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
 
-     @media (max-width: 768px) {
+  #header-text {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    line-height: 1.2 !important; /* reduce vertical text space */
+  }
 
-      #main-content-wrapper {
-        margin-top: -80px !important; /* Adjusted for better visibility on smaller screens */
-      }
+  #header-text h1,
+  #header-text h2,
+  #header-text h3,
+  #header-text h4,
+  #header-text p {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.2 !important;
+  }
 
-      #Home {
-        background-size: contain !important;
-        background-position: top center !important;
-        min-height: 75vh !important;
-        margin-top: -60px !important; /* ⬅️ Raised from -20px to -60px for a higher position */
-      }
-
-      #Home .row {
-        padding-top: 20px !important;
-        flex-direction: column-reverse;
-      }
-
-      #Home .col-12 {
-        margin-top: -10px;
-      }
-
-      #Home .col-md-4 {
-        display: flex;
-        justify-content: flex-end;
-      }
-
-      #Home h1 {
-        font-size: 2rem;
-      }
-
-      .scrolling-text-container {
-        margin-top: -130px !important;
-      }
-
-      img.img-fluid {
-        max-height: 400px;
-      }
-
-      body {
-        background-attachment: scroll;
-      }
-
-      #header-text {
-        padding-top: 0 !important;
-        margin-top: -150px !important;
-      }
+  /* Also collapse margin for the next section */
+  #main-content-wrapper > *:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
 }
 
 
-      .scrolling-text-container {
-        width: 100%;
-        overflow: hidden;
-        border-radius: 0 !important;
-        padding: 12px 0 !important;
-        margin-bottom: 0;
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: #fff !important;
-        box-shadow: 0 2px 16px 0 rgba(76,44,153,0.15), 0 1.5px 8px 0 rgba(0,0,0,0.10);
-        z-index: 10;
-      }
 
-      .scrolling-text {
-        display: inline-block;
-        white-space: nowrap;
-        animation: scroll-infinite 10s linear infinite;
-        font-size: 1rem !important;
-        font-weight: bold;
-        color: #4a0d99 !important;
-      }
 
-      @keyframes scroll-infinite {
-        0% {
-          transform: translateX(5%);
-        }
-        100% {
-          transform: translateX(-100%);
-        }
-      }
 
-      .navbar-nav .nav-link {
-        color: #fff !important;
-        transition: color 0.3s;
-      }
 
-      .navbar-nav .nav-link:hover {
-        color: #ffd700 !important;
-      }
 
-      .navbar {
-        min-height: 48px !important;
-        padding-top: 0.2rem !important;
-        padding-bottom: 0.2rem !important;
-      }
 
-      .navbar-brand img {
-        max-height: 32px !important;
-      }
 
-      .navbar .nav-link {
-        padding-top: 0.2rem !important;
-        padding-bottom: 0.2rem !important;
-      }
 
-      @media (max-width: 992px) {
-      #main-content-wrapper {
-        margin-top: -80px !important;
-      }
-      #Cards {
-        margin-top: 0 !important;
-      }
-      .scrolling-text-container {
-        position: static !important;
-        margin-top: 0 !important;
-        margin-bottom: 8px !important;
-        padding: 8px 0 !important;
-      }
-      #about-us,
-      #contact-us {
-        margin-top: 8px !important;
-      }
+  .scrolling-text-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0 !important;
+    padding: 5px 0 !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff !important;
+    box-shadow: 0 2px 16px 0 rgba(76, 44, 153, 0.15), 0 1.5px 8px 0 rgba(0, 0, 0, 0.10);
+    z-index: 10;
+  }
+
+  .scrolling-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-infinite 10s linear infinite;
+    font-size: 1rem !important;
+    font-weight: bold;
+    color: #4a0d99 !important;
+  }
+
+  @keyframes scroll-infinite {
+    0% {
+      transform: translateX(5%);
     }
-    </style>
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .navbar-nav .nav-link {
+    color: #fff !important;
+    transition: color 0.3s;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #ffd700 !important;
+  }
+
+  .navbar {
+    min-height: 48px !important;
+    padding-top: 0.2rem !important;
+    padding-bottom: 0.2rem !important;
+  }
+
+  .navbar-brand img {
+    max-height: 32px !important;
+  }
+
+  .navbar .nav-link {
+    padding-top: 0.2rem !important;
+    padding-bottom: 0.2rem !important;
+  }
+
+  @media (max-width: 992px) {
+    #Home {
+      min-height: 160vw !important;
+      background-size: contain !important;
+      background-position: top center !important;
+    }
+
+    #main-content-wrapper {
+      margin-top: -80px !important;
+    }
+
+    #Cards {
+      margin-top: 0 !important;
+    }
+
+    .scrolling-text-container {
+      position: static !important;
+      margin-top: 0 !important;
+      margin-bottom: 8px !important;
+      padding: 8px 0 !important;
+    }
+
+    #about-us,
+    #contact-us {
+      margin-top: 8px !important;
+    }
+  }
+</style>
+
   </head>
 
   <body>
