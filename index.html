@@ -64,54 +64,33 @@
 
   @media (min-width: 992px) {
     #Home .col-12.d-flex.flex-column.align-items-center {
-      margin-top: 220px !important;
+      margin-top: 20px !important;
     }
   }
 
   @media (max-width: 768px) {
-  #Home,
-  #header-text,
-  #main-content-wrapper,
-  #Cards,
+  #Home {
+    min-height: 10vw !important;      /* Reduce the height of the header section */
+    margin-top: 0 !important;
+  }
+  #Home .row.align-items-center {
+    padding: 0 !important;
+  }
+  #header-text {
+    margin-top: -180px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
   .scrolling-text-container {
     margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    margin-bottom: 8px !important;
+    padding: 4px 0 !important;
   }
-
-  #header-text {
+  #main-content-wrapper {
     margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    line-height: 1.2 !important; /* reduce vertical text space */
-  }
-
-  #header-text h1,
-  #header-text h2,
-  #header-text h3,
-  #header-text h4,
-  #header-text p {
-    margin: 0 !important;
-    padding: 0 !important;
-    line-height: 1.2 !important;
-  }
-
-  /* Also collapse margin for the next section */
-  #main-content-wrapper > *:first-child {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
   }
 }
-
-
-
-
-
-
-
-
 
 
   .scrolling-text-container {
@@ -170,33 +149,59 @@
     padding-bottom: 0.2rem !important;
   }
 
-  @media (max-width: 992px) {
-    #Home {
-      min-height: 160vw !important;
-      background-size: contain !important;
-      background-position: top center !important;
-    }
+  /* Desktop (default) */
+#Home {
+  min-height: 120vh;
+}
 
-    #main-content-wrapper {
-      margin-top: -80px !important;
-    }
-
-    #Cards {
-      margin-top: 0 !important;
-    }
-
-    .scrolling-text-container {
-      position: static !important;
-      margin-top: 0 !important;
-      margin-bottom: 8px !important;
-      padding: 8px 0 !important;
-    }
-
-    #about-us,
-    #contact-us {
-      margin-top: 8px !important;
-    }
+/* Tablet and mobile */
+@media (max-width: 992px) {
+  #Home {
+    min-height: 60vh !important; /* or adjust as needed */
   }
+}
+@media (max-width: 768px) {
+  #Home {
+    min-height: 40vh !important; /* or adjust as needed for mobile */
+  }
+}
+
+  @media (max-width: 768px) {
+  #Home {
+    min-height: 40vh !important;
+    margin-top: 0 !important;
+  }
+
+  #Home .row.align-items-center {
+    padding: 0 !important;
+  }
+
+  #header-text {
+    margin-top: 160px !important; /* was -180px */
+    padding-top: 40px !important;  /* add top padding to move text down */
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .scrolling-text-container {
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+    padding: 4px 0 !important;
+  }
+
+  #main-content-wrapper {
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #header-text h1.display-4 {
+    font-size: 1.5rem !important;
+  }
+  #header-text h6 {
+    font-size: 0.9rem !important;
+  }
+}
 </style>
 
   </head>
@@ -223,7 +228,7 @@
 
     <!-- Header Section -->
     <div id="Home" class="container-fluid d-flex align-items-center justify-content-center" data-aos="fade-down"
-      style="min-height: 120vh; margin-top: -140px; background: url('images/ghoplu1.png') no-repeat center top; background-size: cover; position: relative; padding: 0;">
+      style=" margin-top: -140px; background: url('images/ghoplu1.png') no-repeat center top; background-size: cover; position: relative; padding: 0;">
       <div class="row align-items-center text-center w-100 justify-content-center" style="padding: 20px 0 0 0;">
         <div id="header-text" class="col-12 d-flex flex-column align-items-center" style="padding-top: 200px;">
           <h1 class="display-4 fw-bold mb-1" style="line-height: 1.1;">DEFINE. CONFIDE.</h1>
