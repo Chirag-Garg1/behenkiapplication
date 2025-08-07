@@ -47,6 +47,10 @@
         text-decoration: none;
       }
 
+      .menu-icon i {
+        margin-right: 8px;
+      }
+
       .hero-text {
         text-align: center;
         color: white;
@@ -63,122 +67,164 @@
         font-size: 18px;
       }
 
-      .content {
+      .main-section {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: 30px 20px;
-        gap: 20px;
-        padding: 20px;
-        border-radius: 15px;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
       }
 
-      .card {
-        border-radius: 15px;
-        padding: 20px;
-        width: 320px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        background-color: rgba(255, 255, 255, 0.9);
-        text-align: center;
-        color: #2c1c75;
+      /* Desktop view */
+      @media (min-width: 769px) {
+        .buttons {
+          display: flex;
+          justify-content: center;
+          gap: 40px;
+          margin: 30px 0 10px 0;
+          width: 100%;
+        }
+        .button-wrapper {
+          width: 300px;
+          display: flex;
+          justify-content: center;
+        }
+        .button-wrapper a {
+          width: 100%;
+          padding: 12px 24px;
+          background-color: #2c1c75;
+          color: white;
+          border-radius: 10px;
+          text-decoration: none;
+          font-weight: bold;
+          transition: background-color 0.3s;
+          display: inline-block;
+          text-align: center;
+        }
+        .button-wrapper a:hover {
+          background-color: #44318d;
+        }
+        .content {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 40px;
+          width: 100%;
+          max-width: 900px;
+          padding: 20px;
+          border-radius: 15px;
+        }
+        .card {
+          border-radius: 15px;
+          padding: 20px;
+          width: 300px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          background-color: rgba(255, 255, 255, 0.9);
+          text-align: center;
+          color: #2c1c75;
+        }
+        .card h3 {
+          color: #2c1c75;
+          margin-bottom: 15px;
+        }
+        .card p,
+        .card ul {
+          font-size: 14px;
+          line-height: 1.6;
+          margin: 0;
+        }
+        .card ul {
+          padding-left: 20px;
+          text-align: left;
+        }
       }
 
-      .card h3 {
-        color: #2c1c75;
-        margin-bottom: 15px;
-      }
-
-      .card p,
-      .card ul {
-        font-size: 14px;
-        line-height: 1.6;
-        margin: 0;
-        color: #333;
-      }
-
-      .card ul {
-        padding-left: 20px;
-        text-align: left;
-      }
-
-      .buttons {
-        display: flex;
-        justify-content: center;
-        gap: 130px;
-        margin-top: -10px;
-        margin-bottom: 20px;
-        margin-left: -20px;
-        flex-wrap: wrap;
-      }
-
-      .button-wrapper {
-        flex-shrink: 0;
-      }
-
-      .button-wrapper:first-child {
-        margin-right: 50px;
-      }
-
-      .button-wrapper:last-child {
-        margin-left: 0px;
-      }
-
-      .buttons a {
-        padding: 12px 24px;
-        background-color: #2c1c75;
-        color: white;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background-color 0.3s;
-        display: inline-block;
-      }
-
-      .buttons a:hover {
-        background-color: #44318d;
-      }
-
+      /* Mobile view */
       @media (max-width: 768px) {
         body {
-          background: url("./images/AIPPM.png") no-repeat center top, #490d99;
+          background: url("./images/AIPPM.png") no-repeat center top,
+            radial-gradient(
+              circle,
+              rgba(76, 44, 92, 1) 0%,
+              rgba(119, 0, 255, 1) 64%,
+              rgba(113, 0, 243, 1) 29%,
+              rgba(0, 0, 0, 1) 100%,
+              rgba(29, 33, 51, 1) 100%
+            );
           background-size: contain;
           background-attachment: scroll;
         }
         .hero-text {
           margin-top: 20px;
         }
-
         .hero-text h2 {
           font-size: 28px;
         }
-
         .hero-text p {
           font-size: 16px;
         }
-
-        .card {
-          width: 90%;
+        .main-section {
+          width: 100%;
         }
-
-        .buttons {
-          flex-direction: column;
-          align-items: center;
-          gap: 10px;
-        }
-
-        .button-wrapper {
-          margin: 0 !important;
-        }
-
-        .buttons a {
-          width: 90%;
-          text-align: center;
-        }
-
         .content {
           flex-direction: column;
           align-items: center;
-          gap: 16px;
+          gap: 24px !important; /* Add gap between cards */
+          max-width: 100%;
+          padding: 10px;
+        }
+        .card {
+          width: 90%;
+          margin-bottom: 24px; /* Extra space between cards if needed */
+          border-radius: 15px;
+          padding: 20px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          background-color: rgba(255, 255, 255, 0.9);
+          text-align: center;
+          color: #2c1c75;
+        }
+        .card h3 {
+          color: #2c1c75;
+          margin-bottom: 15px;
+        }
+        .card p,
+        .card ul {
+          font-size: 14px;
+          line-height: 1.6;
+          margin: 0;
+        }
+        .card ul {
+          padding-left: 20px;
+          text-align: left;
+        }
+        .buttons {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px; /* Add gap between buttons */
+          margin: 30px 0;
+          width: 100%;
+        }
+        .button-wrapper {
+          width: 90%;
+          max-width: 400px;
+          display: flex;
+          justify-content: center;
+        }
+        .button-wrapper a {
+          width: 100%;
+          padding: 12px 0;
+          text-align: center;
+          font-size: 1rem;
+          border-radius: 10px;
+          background-color: #2c1c75;
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+          transition: background-color 0.3s;
+          display: inline-block;
+        }
+        .button-wrapper a:hover {
+          background-color: #44318d;
         }
       }
     </style>
@@ -207,61 +253,64 @@
     <div class="hero-text">
       <h2>The Indian Political Arena — Where Debate Shapes Destiny.</h2>
       <p>
-        The All India Political Parties Meet (AIPPM) brings together India’s
+        The All India Political Parties Meet (AIPPM) brings together India's
         political voices for real-time negotiation and consensus-building.
       </p>
     </div>
 
-    <!-- Content Section -->
-    <div class="content">
-      <div class="card">
-        <h3>What is the AIPPM?</h3>
-        <p>
-          The All India Political Parties Meet (AIPPM) is a simulation of the
-          informal gathering of India’s major political parties. It’s where
-          leaders debate, negotiate, and try to reach consensus on pressing
-          national issues.
-        </p>
-        <p>In this committee, participants:</p>
-        <ul>
-          <li>Represent real Indian political parties</li>
-          <li>Debate on current and relevant national topics</li>
-          <li>Negotiate alliances and strategies</li>
-          <li>Experience the art of coalition politics</li>
-        </ul>
-        <p>
-          The AIPPM is about understanding India’s political landscape and
-          learning how democracy works through dialogue and debate.
-        </p>
+    <!-- Main Section -->
+    <div class="main-section">
+      <!-- Buttons Section -->
+      <div class="buttons">
+        <div class="button-wrapper">
+          <a href="#">See AIPPM Rules of Procedure</a>
+        </div>
+        <div class="button-wrapper">
+          <a href="page1Extended.html">Research Portal</a>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>What do YOU do in MUN as an AIPPM delegate?</h3>
-        <p>
-          You step into the shoes of a political leader, voicing your party’s
-          stance and negotiating with others.
-        </p>
-        <p>Your job?</p>
-        <ul>
-          <li>Present your party’s viewpoint with conviction</li>
-          <li>Engage in passionate yet respectful debate</li>
-          <li>Form alliances and build consensus</li>
-          <li>Draft resolutions that reflect collective agreement</li>
-        </ul>
-        <p>
-          AIPPM is about persuasive speaking, strategic thinking, and real-world
-          political experience.
-        </p>
-      </div>
-    </div>
+      <!-- Content Section -->
+      <div class="content">
+        <div class="card">
+          <h3>What is the AIPPM?</h3>
+          <p>
+            The All India Political Parties Meet (AIPPM) is a simulation of the
+            informal gathering of India's major political parties. It's where
+            leaders debate, negotiate, and try to reach consensus on pressing
+            national issues.
+          </p>
+          <p>In this committee, participants:</p>
+          <ul>
+            <li>Represent real Indian political parties</li>
+            <li>Debate on current and relevant national topics</li>
+            <li>Negotiate alliances and strategies</li>
+            <li>Experience the art of coalition politics</li>
+          </ul>
+          <p>
+            The AIPPM is about understanding India's political landscape and
+            learning how democracy works through dialogue and debate.
+          </p>
+        </div>
 
-    <!-- Button Section -->
-    <div class="buttons">
-      <div class="button-wrapper">
-        <a href="#">See AIPPM Rules of Procedure</a>
-      </div>
-      <div class="button-wrapper">
-        <a href="page1Extended.html">Research Portal</a>
+        <div class="card">
+          <h3>What do YOU do in MUN as an AIPPM delegate?</h3>
+          <p>
+            You step into the shoes of a political leader, voicing your party's
+            stance and negotiating with others.
+          </p>
+          <p>Your job?</p>
+          <ul>
+            <li>Present your party's viewpoint with conviction</li>
+            <li>Engage in passionate yet respectful debate</li>
+            <li>Form alliances and build consensus</li>
+            <li>Draft resolutions that reflect collective agreement</li>
+          </ul>
+          <p>
+            AIPPM is about persuasive speaking, strategic thinking, and real-world
+            political experience.
+          </p>
+        </div>
       </div>
     </div>
   </body>
